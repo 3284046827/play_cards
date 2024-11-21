@@ -1,0 +1,992 @@
+[ 2017-09-18T14:30:15+08:00 ] 127.0.0.1 127.0.0.1 GET /
+[ log ] test.souho.net/ [运行时间：0.258662s][吞吐率：3.87req/s] [内存消耗：2,404.58kb] [文件加载：63]
+[ info ] [ LANG ] D:\www\thinkphp\lang\zh-cn.php
+[ info ] [ BIND ] 'index'
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => NULL,
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => '__cfduid=d399d79fc6ee62203ffee00131381dd171503894340; UM_distinctid=15e2cba69f7707-01e5fcffe3b588-256e6f6f-1fa400-15e2cba69f866a; 5639_seccodec59a47f0=zvwMV1xvn7r0elTXt-u0Ods6gRor-Z9iob4822jDhvhwu3T1_ou; bgColorSelectorPosition=3; bdshare_firstime=1504328165795; 4152_seccodec59a47f0=jAan3mdeMmmbFf5EZm5mTIqLITcqFlNL8BeFghQsFq-gZn-sqZa; session_id_ip=127.0.0.1_dafc388db97ae9a3b058b10d2093cb6b; 57da___switch=F71rf; 57da___uniacid=3; 57da___uid=1; pgv_pvi=7567856640; ECS[visit_times]=1; province=2; city=52; district=500; street=0; street_area=0; dscUrl=privilege.php%3Fact%3Dlogout; admin_type=1; CNZZDATA1256793290=1070085640-1504180058-%7C1505659670',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/49.0.2623.75 Safari/537.36 LBBROWSER',
+  'upgrade-insecure-requests' => '1',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+  'cache-control' => 'max-age=0',
+  'connection' => 'close',
+  'host' => 'test.souho.net',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\index\controller\Index->index[ D:\www\application\index\controller\Index.php ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.002136s ] mysql:dbname=h5niuniu;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `t_nav` [ RunTime:0.074055s ]
+[ sql ] [ SQL ] SELECT * FROM `t_nav` WHERE  `pid` = 0 ORDER BY `sort` [ RunTime:0.025245s ]
+[ sql ] [ SQL ] SELECT * FROM `t_nav` WHERE  `pid` = 1 ORDER BY `sort` [ RunTime:0.000335s ]
+[ sql ] [ SQL ] SELECT * FROM `t_nav` WHERE  `pid` = 2 ORDER BY `sort` [ RunTime:0.000300s ]
+[ sql ] [ SQL ] SELECT * FROM `t_nav` WHERE  `pid` = 3 ORDER BY `sort` [ RunTime:0.000288s ]
+[ sql ] [ SQL ] SELECT * FROM `t_nav` WHERE  `pid` = 5 ORDER BY `sort` [ RunTime:0.000358s ]
+[ sql ] [ SQL ] SELECT * FROM `t_nav` WHERE  `pid` = 6 ORDER BY `sort` [ RunTime:0.000325s ]
+[ sql ] [ SQL ] SELECT * FROM `t_nav` WHERE  `pid` = 4 ORDER BY `sort` [ RunTime:0.000320s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `t_ad` [ RunTime:0.016429s ]
+[ sql ] [ SQL ] SELECT * FROM `t_ad` WHERE  `status` = 1 [ RunTime:0.000330s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `t_product` [ RunTime:0.020502s ]
+[ sql ] [ SQL ] SELECT * FROM `t_product` WHERE  `is_top` = 1 LIMIT 2 [ RunTime:0.000552s ]
+[ sql ] [ SQL ] SELECT * FROM `t_product` WHERE  `is_rec` = 1 LIMIT 3 [ RunTime:0.000316s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `t_category` [ RunTime:0.017676s ]
+[ sql ] [ SQL ] SELECT * FROM `t_category` WHERE  `status` = 1  AND `pid` = 0 [ RunTime:0.000374s ]
+[ sql ] [ SQL ] SELECT * FROM `t_category` WHERE  `status` = 1  AND `pid` = 0 LIMIT 5 [ RunTime:0.000353s ]
+[ sql ] [ SQL ] SELECT * FROM `t_category` WHERE  `pid` = 348 [ RunTime:0.000291s ]
+[ sql ] [ SQL ] SELECT * FROM `t_category` WHERE  `pid` = 353 [ RunTime:0.000260s ]
+[ sql ] [ SQL ] SELECT * FROM `t_category` WHERE  `pid` = 354 [ RunTime:0.000251s ]
+[ sql ] [ SQL ] SELECT * FROM `t_category` WHERE  `pid` = 355 [ RunTime:0.000249s ]
+[ sql ] [ SQL ] SELECT * FROM `t_product` WHERE  `status` = 1  AND `category_id` IN (353,354,355,348) LIMIT 8 [ RunTime:0.000463s ]
+[ sql ] [ SQL ] SELECT * FROM `t_category` WHERE  `pid` = 356 [ RunTime:0.000336s ]
+[ sql ] [ SQL ] SELECT * FROM `t_product` WHERE  `status` = 1  AND `category_id` IN (356) LIMIT 8 [ RunTime:0.000390s ]
+
+---------------------------------------------------------------
+[ 2017-09-18T14:30:15+08:00 ] 127.0.0.1 127.0.0.1 GET /game.php
+[ log ] test.souho.net/game.php [运行时间：0.026381s][吞吐率：37.91req/s] [内存消耗：1,531.92kb] [文件加载：57]
+[ info ] [ LANG ] D:\www\thinkphp\lang\zh-cn.php
+[ info ] [ BIND ] 'game'
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'game',
+    1 => NULL,
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => '__cfduid=d399d79fc6ee62203ffee00131381dd171503894340; UM_distinctid=15e2cba69f7707-01e5fcffe3b588-256e6f6f-1fa400-15e2cba69f866a; 5639_seccodec59a47f0=zvwMV1xvn7r0elTXt-u0Ods6gRor-Z9iob4822jDhvhwu3T1_ou; bgColorSelectorPosition=3; bdshare_firstime=1504328165795; 4152_seccodec59a47f0=jAan3mdeMmmbFf5EZm5mTIqLITcqFlNL8BeFghQsFq-gZn-sqZa; session_id_ip=127.0.0.1_dafc388db97ae9a3b058b10d2093cb6b; 57da___switch=F71rf; 57da___uniacid=3; 57da___uid=1; pgv_pvi=7567856640; ECS[visit_times]=1; province=2; city=52; district=500; street=0; street_area=0; dscUrl=privilege.php%3Fact%3Dlogout; admin_type=1; CNZZDATA1256793290=1070085640-1504180058-%7C1505659670; PHPSESSID=mou1c7qp886gv9r0974dhqfbq6',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/49.0.2623.75 Safari/537.36 LBBROWSER',
+  'upgrade-insecure-requests' => '1',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+  'cache-control' => 'max-age=0',
+  'connection' => 'close',
+  'host' => 'test.souho.net',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2017-09-18T14:30:15+08:00 ] 127.0.0.1 127.0.0.1 GET /game.php/login/index.html
+[ log ] test.souho.net/game.php/login/index.html [运行时间：0.088815s][吞吐率：11.26req/s] [内存消耗：2,453.33kb] [文件加载：117]
+[ info ] [ LANG ] D:\www\thinkphp\lang\zh-cn.php
+[ info ] [ BIND ] 'game'
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'game',
+    1 => 'login',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => '__cfduid=d399d79fc6ee62203ffee00131381dd171503894340; UM_distinctid=15e2cba69f7707-01e5fcffe3b588-256e6f6f-1fa400-15e2cba69f866a; 5639_seccodec59a47f0=zvwMV1xvn7r0elTXt-u0Ods6gRor-Z9iob4822jDhvhwu3T1_ou; bgColorSelectorPosition=3; bdshare_firstime=1504328165795; 4152_seccodec59a47f0=jAan3mdeMmmbFf5EZm5mTIqLITcqFlNL8BeFghQsFq-gZn-sqZa; session_id_ip=127.0.0.1_dafc388db97ae9a3b058b10d2093cb6b; 57da___switch=F71rf; 57da___uniacid=3; 57da___uid=1; pgv_pvi=7567856640; ECS[visit_times]=1; province=2; city=52; district=500; street=0; street_area=0; dscUrl=privilege.php%3Fact%3Dlogout; admin_type=1; CNZZDATA1256793290=1070085640-1504180058-%7C1505659670; PHPSESSID=mou1c7qp886gv9r0974dhqfbq6',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/49.0.2623.75 Safari/537.36 LBBROWSER',
+  'upgrade-insecure-requests' => '1',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+  'cache-control' => 'max-age=0',
+  'connection' => 'close',
+  'host' => 'test.souho.net',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\game\controller\Login->index[ D:\www\application\game\controller\Login.php ]
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2017-09-18T14:30:30+08:00 ] 127.0.0.1 127.0.0.1 GET /admin.php
+[ log ] test.souho.net/admin.php [运行时间：0.032249s][吞吐率：31.01req/s] [内存消耗：1,553.95kb] [文件加载：57]
+[ info ] [ LANG ] D:\www\thinkphp\lang\zh-cn.php
+[ info ] [ BIND ] 'admin'
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => NULL,
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => '__cfduid=d399d79fc6ee62203ffee00131381dd171503894340; UM_distinctid=15e2cba69f7707-01e5fcffe3b588-256e6f6f-1fa400-15e2cba69f866a; 5639_seccodec59a47f0=zvwMV1xvn7r0elTXt-u0Ods6gRor-Z9iob4822jDhvhwu3T1_ou; bgColorSelectorPosition=3; bdshare_firstime=1504328165795; 4152_seccodec59a47f0=jAan3mdeMmmbFf5EZm5mTIqLITcqFlNL8BeFghQsFq-gZn-sqZa; session_id_ip=127.0.0.1_dafc388db97ae9a3b058b10d2093cb6b; 57da___switch=F71rf; 57da___uniacid=3; 57da___uid=1; pgv_pvi=7567856640; ECS[visit_times]=1; province=2; city=52; district=500; street=0; street_area=0; dscUrl=privilege.php%3Fact%3Dlogout; admin_type=1; CNZZDATA1256793290=1070085640-1504180058-%7C1505659670; PHPSESSID=mou1c7qp886gv9r0974dhqfbq6',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/49.0.2623.75 Safari/537.36 LBBROWSER',
+  'upgrade-insecure-requests' => '1',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+  'connection' => 'close',
+  'host' => 'test.souho.net',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2017-09-18T14:30:30+08:00 ] 127.0.0.1 127.0.0.1 GET /admin.php/login/index.html
+[ log ] test.souho.net/admin.php/login/index.html [运行时间：0.042421s][吞吐率：23.57req/s] [内存消耗：1,640.68kb] [文件加载：58]
+[ info ] [ LANG ] D:\www\thinkphp\lang\zh-cn.php
+[ info ] [ BIND ] 'admin'
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'login',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => '__cfduid=d399d79fc6ee62203ffee00131381dd171503894340; UM_distinctid=15e2cba69f7707-01e5fcffe3b588-256e6f6f-1fa400-15e2cba69f866a; 5639_seccodec59a47f0=zvwMV1xvn7r0elTXt-u0Ods6gRor-Z9iob4822jDhvhwu3T1_ou; bgColorSelectorPosition=3; bdshare_firstime=1504328165795; 4152_seccodec59a47f0=jAan3mdeMmmbFf5EZm5mTIqLITcqFlNL8BeFghQsFq-gZn-sqZa; session_id_ip=127.0.0.1_dafc388db97ae9a3b058b10d2093cb6b; 57da___switch=F71rf; 57da___uniacid=3; 57da___uid=1; pgv_pvi=7567856640; ECS[visit_times]=1; province=2; city=52; district=500; street=0; street_area=0; dscUrl=privilege.php%3Fact%3Dlogout; admin_type=1; CNZZDATA1256793290=1070085640-1504180058-%7C1505659670; PHPSESSID=mou1c7qp886gv9r0974dhqfbq6',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/49.0.2623.75 Safari/537.36 LBBROWSER',
+  'upgrade-insecure-requests' => '1',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+  'connection' => 'close',
+  'host' => 'test.souho.net',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\admin\controller\Login->index[ D:\www\application\admin\controller\Login.php ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ VIEW ] D:\www/application/admin\view\login\index.html [ array (
+) ]
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2017-09-18T14:30:30+08:00 ] 127.0.0.1 127.0.0.1 GET /admin.php/login/verify.html
+[ log ] test.souho.net/admin.php/login/verify.html [运行时间：0.221394s][吞吐率：4.52req/s] [内存消耗：1,509.87kb] [文件加载：54]
+[ info ] [ LANG ] D:\www\thinkphp\lang\zh-cn.php
+[ info ] [ BIND ] 'admin'
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'login',
+    2 => 'verify',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => '__cfduid=d399d79fc6ee62203ffee00131381dd171503894340; UM_distinctid=15e2cba69f7707-01e5fcffe3b588-256e6f6f-1fa400-15e2cba69f866a; 5639_seccodec59a47f0=zvwMV1xvn7r0elTXt-u0Ods6gRor-Z9iob4822jDhvhwu3T1_ou; bgColorSelectorPosition=3; bdshare_firstime=1504328165795; 4152_seccodec59a47f0=jAan3mdeMmmbFf5EZm5mTIqLITcqFlNL8BeFghQsFq-gZn-sqZa; session_id_ip=127.0.0.1_dafc388db97ae9a3b058b10d2093cb6b; 57da___switch=F71rf; 57da___uniacid=3; 57da___uid=1; pgv_pvi=7567856640; ECS[visit_times]=1; province=2; city=52; district=500; street=0; street_area=0; dscUrl=privilege.php%3Fact%3Dlogout; admin_type=1; CNZZDATA1256793290=1070085640-1504180058-%7C1505659670; PHPSESSID=mou1c7qp886gv9r0974dhqfbq6',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'referer' => 'http://test.souho.net/admin.php/login/index.html',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/49.0.2623.75 Safari/537.36 LBBROWSER',
+  'accept' => 'image/webp,image/*,*/*;q=0.8',
+  'connection' => 'close',
+  'host' => 'test.souho.net',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\admin\controller\Login->verify[ D:\www\application\admin\controller\Login.php ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2017-09-18T14:30:31+08:00 ] 127.0.0.1 127.0.0.1 GET /admin.php/login/index.html
+[ log ] test.souho.net/admin.php/login/index.html [运行时间：0.040842s][吞吐率：24.48req/s] [内存消耗：1,511.64kb] [文件加载：55]
+[ info ] [ LANG ] D:\www\thinkphp\lang\zh-cn.php
+[ info ] [ BIND ] 'admin'
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'login',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => '__cfduid=d399d79fc6ee62203ffee00131381dd171503894340; UM_distinctid=15e2cba69f7707-01e5fcffe3b588-256e6f6f-1fa400-15e2cba69f866a; 5639_seccodec59a47f0=zvwMV1xvn7r0elTXt-u0Ods6gRor-Z9iob4822jDhvhwu3T1_ou; bgColorSelectorPosition=3; bdshare_firstime=1504328165795; 4152_seccodec59a47f0=jAan3mdeMmmbFf5EZm5mTIqLITcqFlNL8BeFghQsFq-gZn-sqZa; session_id_ip=127.0.0.1_dafc388db97ae9a3b058b10d2093cb6b; 57da___switch=F71rf; 57da___uniacid=3; 57da___uid=1; pgv_pvi=7567856640; ECS[visit_times]=1; province=2; city=52; district=500; street=0; street_area=0; dscUrl=privilege.php%3Fact%3Dlogout; admin_type=1; CNZZDATA1256793290=1070085640-1504180058-%7C1505659670; PHPSESSID=mou1c7qp886gv9r0974dhqfbq6',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'referer' => 'http://test.souho.net/admin.php/login/index.html',
+  'accept' => '*/*',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/49.0.2623.75 Safari/537.36 LBBROWSER',
+  'connection' => 'close',
+  'host' => 'test.souho.net',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\admin\controller\Login->index[ D:\www\application\admin\controller\Login.php ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ VIEW ] D:\www/application/admin\view\login\index.html [ array (
+) ]
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2017-09-18T14:30:41+08:00 ] 127.0.0.1 127.0.0.1 GET /admin.php/login/verify/rand/1505716241564.html
+[ log ] test.souho.net/admin.php/login/verify/rand/1505716241564.html [运行时间：0.028246s][吞吐率：35.40req/s] [内存消耗：1,510.20kb] [文件加载：54]
+[ info ] [ LANG ] D:\www\thinkphp\lang\zh-cn.php
+[ info ] [ BIND ] 'admin'
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'login',
+    2 => 'verify',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => '__cfduid=d399d79fc6ee62203ffee00131381dd171503894340; UM_distinctid=15e2cba69f7707-01e5fcffe3b588-256e6f6f-1fa400-15e2cba69f866a; 5639_seccodec59a47f0=zvwMV1xvn7r0elTXt-u0Ods6gRor-Z9iob4822jDhvhwu3T1_ou; bgColorSelectorPosition=3; bdshare_firstime=1504328165795; 4152_seccodec59a47f0=jAan3mdeMmmbFf5EZm5mTIqLITcqFlNL8BeFghQsFq-gZn-sqZa; session_id_ip=127.0.0.1_dafc388db97ae9a3b058b10d2093cb6b; 57da___switch=F71rf; 57da___uniacid=3; 57da___uid=1; pgv_pvi=7567856640; ECS[visit_times]=1; province=2; city=52; district=500; street=0; street_area=0; dscUrl=privilege.php%3Fact%3Dlogout; admin_type=1; PHPSESSID=mou1c7qp886gv9r0974dhqfbq6; CNZZDATA1256793290=1070085640-1504180058-%7C1505713671',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'referer' => 'http://test.souho.net/admin.php/login/index.html',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/49.0.2623.75 Safari/537.36 LBBROWSER',
+  'accept' => 'image/webp,image/*,*/*;q=0.8',
+  'connection' => 'close',
+  'host' => 'test.souho.net',
+)
+[ info ] [ PARAM ] array (
+  'rand' => '1505716241564',
+)
+[ info ] [ RUN ] app\admin\controller\Login->verify[ D:\www\application\admin\controller\Login.php ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2017-09-18T14:30:47+08:00 ] 127.0.0.1 127.0.0.1 POST /admin.php/login/dologin.html
+[ log ] test.souho.net/admin.php/login/dologin.html [运行时间：0.133692s][吞吐率：7.48req/s] [内存消耗：2,379.86kb] [文件加载：66]
+[ info ] [ LANG ] D:\www\thinkphp\lang\zh-cn.php
+[ info ] [ BIND ] 'admin'
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'login',
+    2 => 'dologin',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => '__cfduid=d399d79fc6ee62203ffee00131381dd171503894340; UM_distinctid=15e2cba69f7707-01e5fcffe3b588-256e6f6f-1fa400-15e2cba69f866a; 5639_seccodec59a47f0=zvwMV1xvn7r0elTXt-u0Ods6gRor-Z9iob4822jDhvhwu3T1_ou; bgColorSelectorPosition=3; bdshare_firstime=1504328165795; 4152_seccodec59a47f0=jAan3mdeMmmbFf5EZm5mTIqLITcqFlNL8BeFghQsFq-gZn-sqZa; session_id_ip=127.0.0.1_dafc388db97ae9a3b058b10d2093cb6b; 57da___switch=F71rf; 57da___uniacid=3; 57da___uid=1; pgv_pvi=7567856640; ECS[visit_times]=1; province=2; city=52; district=500; street=0; street_area=0; dscUrl=privilege.php%3Fact%3Dlogout; admin_type=1; PHPSESSID=mou1c7qp886gv9r0974dhqfbq6; CNZZDATA1256793290=1070085640-1504180058-%7C1505713671',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://test.souho.net/admin.php/login/index.html',
+  'content-type' => 'application/x-www-form-urlencoded; charset=UTF-8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/49.0.2623.75 Safari/537.36 LBBROWSER',
+  'x-requested-with' => 'XMLHttpRequest',
+  'origin' => 'http://test.souho.net',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'content-length' => '40',
+  'connection' => 'close',
+  'host' => 'test.souho.net',
+)
+[ info ] [ PARAM ] array (
+  'account' => 'user',
+  'admin_pass' => 'user',
+  'verify' => 'UF4I',
+)
+[ info ] [ RUN ] app\admin\controller\Login->dologin[ D:\www\application\admin\controller\Login.php ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000836s ] mysql:dbname=h5niuniu;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `t_user` [ RunTime:0.094523s ]
+[ sql ] [ SQL ] SELECT * FROM `t_user` WHERE  `account` = 'user' LIMIT 1 [ RunTime:0.000517s ]
+
+---------------------------------------------------------------
+[ 2017-09-18T14:30:47+08:00 ] 127.0.0.1 127.0.0.1 GET /admin.php/member/index.html
+[ log ] test.souho.net/admin.php/member/index.html [运行时间：0.139522s][吞吐率：7.17req/s] [内存消耗：2,722.95kb] [文件加载：72]
+[ info ] [ LANG ] D:\www\thinkphp\lang\zh-cn.php
+[ info ] [ BIND ] 'admin'
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'member',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => '__cfduid=d399d79fc6ee62203ffee00131381dd171503894340; UM_distinctid=15e2cba69f7707-01e5fcffe3b588-256e6f6f-1fa400-15e2cba69f866a; 5639_seccodec59a47f0=zvwMV1xvn7r0elTXt-u0Ods6gRor-Z9iob4822jDhvhwu3T1_ou; bgColorSelectorPosition=3; bdshare_firstime=1504328165795; 4152_seccodec59a47f0=jAan3mdeMmmbFf5EZm5mTIqLITcqFlNL8BeFghQsFq-gZn-sqZa; session_id_ip=127.0.0.1_dafc388db97ae9a3b058b10d2093cb6b; 57da___switch=F71rf; 57da___uniacid=3; 57da___uid=1; pgv_pvi=7567856640; ECS[visit_times]=1; province=2; city=52; district=500; street=0; street_area=0; dscUrl=privilege.php%3Fact%3Dlogout; admin_type=1; PHPSESSID=mou1c7qp886gv9r0974dhqfbq6; CNZZDATA1256793290=1070085640-1504180058-%7C1505713671',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'referer' => 'http://test.souho.net/admin.php/login/index.html',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/49.0.2623.75 Safari/537.36 LBBROWSER',
+  'upgrade-insecure-requests' => '1',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+  'connection' => 'close',
+  'host' => 'test.souho.net',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\admin\controller\Common->index[ D:\www\application\admin\controller\Common.php ]
+[ info ] [ VIEW ] D:\www/application/admin\view\member\index.html [ array (
+  0 => 'userinfo',
+  1 => 'list',
+  2 => 'pages',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000796s ] mysql:dbname=h5niuniu;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `t_user` [ RunTime:0.012352s ]
+[ sql ] [ SQL ] SELECT * FROM `t_user` WHERE  `id` = 263 LIMIT 1 [ RunTime:0.000548s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `t_member` [ RunTime:0.018643s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `t_member` LIMIT 1 [ RunTime:0.003578s ]
+[ sql ] [ SQL ] SELECT * FROM `t_member` LIMIT 0,15 [ RunTime:0.000735s ]
+
+---------------------------------------------------------------
+[ 2017-09-18T14:30:47+08:00 ] 127.0.0.1 127.0.0.1 GET /admin.php/member/index.html
+[ log ] test.souho.net/admin.php/member/index.html [运行时间：0.063643s][吞吐率：15.71req/s] [内存消耗：2,578.46kb] [文件加载：69]
+[ info ] [ LANG ] D:\www\thinkphp\lang\zh-cn.php
+[ info ] [ BIND ] 'admin'
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'member',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => '__cfduid=d399d79fc6ee62203ffee00131381dd171503894340; UM_distinctid=15e2cba69f7707-01e5fcffe3b588-256e6f6f-1fa400-15e2cba69f866a; 5639_seccodec59a47f0=zvwMV1xvn7r0elTXt-u0Ods6gRor-Z9iob4822jDhvhwu3T1_ou; bgColorSelectorPosition=3; bdshare_firstime=1504328165795; 4152_seccodec59a47f0=jAan3mdeMmmbFf5EZm5mTIqLITcqFlNL8BeFghQsFq-gZn-sqZa; session_id_ip=127.0.0.1_dafc388db97ae9a3b058b10d2093cb6b; 57da___switch=F71rf; 57da___uniacid=3; 57da___uid=1; pgv_pvi=7567856640; ECS[visit_times]=1; province=2; city=52; district=500; street=0; street_area=0; dscUrl=privilege.php%3Fact%3Dlogout; admin_type=1; PHPSESSID=mou1c7qp886gv9r0974dhqfbq6; CNZZDATA1256793290=1070085640-1504180058-%7C1505713671',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'referer' => 'http://test.souho.net/admin.php/member/index.html',
+  'accept' => '*/*',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/49.0.2623.75 Safari/537.36 LBBROWSER',
+  'connection' => 'close',
+  'host' => 'test.souho.net',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\admin\controller\Common->index[ D:\www\application\admin\controller\Common.php ]
+[ info ] [ VIEW ] D:\www/application/admin\view\member\index.html [ array (
+  0 => 'userinfo',
+  1 => 'list',
+  2 => 'pages',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000737s ] mysql:dbname=h5niuniu;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `t_user` [ RunTime:0.011510s ]
+[ sql ] [ SQL ] SELECT * FROM `t_user` WHERE  `id` = 263 LIMIT 1 [ RunTime:0.000346s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `t_member` [ RunTime:0.010852s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `t_member` LIMIT 1 [ RunTime:0.000210s ]
+[ sql ] [ SQL ] SELECT * FROM `t_member` LIMIT 0,15 [ RunTime:0.000471s ]
+
+---------------------------------------------------------------
+[ 2017-09-18T14:30:53+08:00 ] 127.0.0.1 127.0.0.1 GET /admin.php/member/delete/id/4.html
+[ log ] test.souho.net/admin.php/member/delete/id/4.html [运行时间：0.115602s][吞吐率：8.65req/s] [内存消耗：2,520.48kb] [文件加载：71]
+[ info ] [ LANG ] D:\www\thinkphp\lang\zh-cn.php
+[ info ] [ BIND ] 'admin'
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'member',
+    2 => 'delete',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => '__cfduid=d399d79fc6ee62203ffee00131381dd171503894340; UM_distinctid=15e2cba69f7707-01e5fcffe3b588-256e6f6f-1fa400-15e2cba69f866a; 5639_seccodec59a47f0=zvwMV1xvn7r0elTXt-u0Ods6gRor-Z9iob4822jDhvhwu3T1_ou; bgColorSelectorPosition=3; bdshare_firstime=1504328165795; 4152_seccodec59a47f0=jAan3mdeMmmbFf5EZm5mTIqLITcqFlNL8BeFghQsFq-gZn-sqZa; session_id_ip=127.0.0.1_dafc388db97ae9a3b058b10d2093cb6b; 57da___switch=F71rf; 57da___uniacid=3; 57da___uid=1; pgv_pvi=7567856640; ECS[visit_times]=1; province=2; city=52; district=500; street=0; street_area=0; dscUrl=privilege.php%3Fact%3Dlogout; admin_type=1; PHPSESSID=mou1c7qp886gv9r0974dhqfbq6; CNZZDATA1256793290=1070085640-1504180058-%7C1505713671',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'referer' => 'http://test.souho.net/admin.php/member/index.html',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/49.0.2623.75 Safari/537.36 LBBROWSER',
+  'upgrade-insecure-requests' => '1',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+  'connection' => 'close',
+  'host' => 'test.souho.net',
+)
+[ info ] [ PARAM ] array (
+  'id' => '4',
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\admin\controller\Common->delete[ D:\www\application\admin\controller\Common.php ]
+[ info ] [ CACHE ] INIT File
+[ info ] [ VIEW ] D:\www\thinkphp\tpl\dispatch_jump.tpl [ array (
+  0 => 'userinfo',
+  1 => 'code',
+  2 => 'msg',
+  3 => 'data',
+  4 => 'url',
+  5 => 'wait',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001050s ] mysql:dbname=h5niuniu;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `t_user` [ RunTime:0.018392s ]
+[ sql ] [ SQL ] SELECT * FROM `t_user` WHERE  `id` = 263 LIMIT 1 [ RunTime:0.000421s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `t_member` [ RunTime:0.015328s ]
+[ sql ] [ SQL ] DELETE FROM `t_member`    WHERE  `id` = 4 [ RunTime:0.020982s ]
+
+---------------------------------------------------------------
+[ 2017-09-18T14:30:55+08:00 ] 127.0.0.1 127.0.0.1 GET /admin.php/member/index.html
+[ log ] test.souho.net/admin.php/member/index.html [运行时间：0.107789s][吞吐率：9.28req/s] [内存消耗：2,578.81kb] [文件加载：69]
+[ info ] [ LANG ] D:\www\thinkphp\lang\zh-cn.php
+[ info ] [ BIND ] 'admin'
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'member',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => '__cfduid=d399d79fc6ee62203ffee00131381dd171503894340; UM_distinctid=15e2cba69f7707-01e5fcffe3b588-256e6f6f-1fa400-15e2cba69f866a; 5639_seccodec59a47f0=zvwMV1xvn7r0elTXt-u0Ods6gRor-Z9iob4822jDhvhwu3T1_ou; bgColorSelectorPosition=3; bdshare_firstime=1504328165795; 4152_seccodec59a47f0=jAan3mdeMmmbFf5EZm5mTIqLITcqFlNL8BeFghQsFq-gZn-sqZa; session_id_ip=127.0.0.1_dafc388db97ae9a3b058b10d2093cb6b; 57da___switch=F71rf; 57da___uniacid=3; 57da___uid=1; pgv_pvi=7567856640; ECS[visit_times]=1; province=2; city=52; district=500; street=0; street_area=0; dscUrl=privilege.php%3Fact%3Dlogout; admin_type=1; PHPSESSID=mou1c7qp886gv9r0974dhqfbq6; CNZZDATA1256793290=1070085640-1504180058-%7C1505713671',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'referer' => 'http://test.souho.net/admin.php/member/delete/id/4.html',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/49.0.2623.75 Safari/537.36 LBBROWSER',
+  'upgrade-insecure-requests' => '1',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+  'connection' => 'close',
+  'host' => 'test.souho.net',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\admin\controller\Common->index[ D:\www\application\admin\controller\Common.php ]
+[ info ] [ VIEW ] D:\www/application/admin\view\member\index.html [ array (
+  0 => 'userinfo',
+  1 => 'list',
+  2 => 'pages',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000863s ] mysql:dbname=h5niuniu;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `t_user` [ RunTime:0.048945s ]
+[ sql ] [ SQL ] SELECT * FROM `t_user` WHERE  `id` = 263 LIMIT 1 [ RunTime:0.000461s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `t_member` [ RunTime:0.014246s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `t_member` LIMIT 1 [ RunTime:0.000318s ]
+[ sql ] [ SQL ] SELECT * FROM `t_member` LIMIT 0,15 [ RunTime:0.000521s ]
+
+---------------------------------------------------------------
+[ 2017-09-18T14:30:55+08:00 ] 127.0.0.1 127.0.0.1 GET /admin.php/member/index.html
+[ log ] test.souho.net/admin.php/member/index.html [运行时间：0.073126s][吞吐率：13.68req/s] [内存消耗：2,578.54kb] [文件加载：69]
+[ info ] [ LANG ] D:\www\thinkphp\lang\zh-cn.php
+[ info ] [ BIND ] 'admin'
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'member',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => '__cfduid=d399d79fc6ee62203ffee00131381dd171503894340; UM_distinctid=15e2cba69f7707-01e5fcffe3b588-256e6f6f-1fa400-15e2cba69f866a; 5639_seccodec59a47f0=zvwMV1xvn7r0elTXt-u0Ods6gRor-Z9iob4822jDhvhwu3T1_ou; bgColorSelectorPosition=3; bdshare_firstime=1504328165795; 4152_seccodec59a47f0=jAan3mdeMmmbFf5EZm5mTIqLITcqFlNL8BeFghQsFq-gZn-sqZa; session_id_ip=127.0.0.1_dafc388db97ae9a3b058b10d2093cb6b; 57da___switch=F71rf; 57da___uniacid=3; 57da___uid=1; pgv_pvi=7567856640; ECS[visit_times]=1; province=2; city=52; district=500; street=0; street_area=0; dscUrl=privilege.php%3Fact%3Dlogout; admin_type=1; PHPSESSID=mou1c7qp886gv9r0974dhqfbq6; CNZZDATA1256793290=1070085640-1504180058-%7C1505713671',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'referer' => 'http://test.souho.net/admin.php/member/index.html',
+  'accept' => '*/*',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/49.0.2623.75 Safari/537.36 LBBROWSER',
+  'connection' => 'close',
+  'host' => 'test.souho.net',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\admin\controller\Common->index[ D:\www\application\admin\controller\Common.php ]
+[ info ] [ VIEW ] D:\www/application/admin\view\member\index.html [ array (
+  0 => 'userinfo',
+  1 => 'list',
+  2 => 'pages',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001059s ] mysql:dbname=h5niuniu;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `t_user` [ RunTime:0.015638s ]
+[ sql ] [ SQL ] SELECT * FROM `t_user` WHERE  `id` = 263 LIMIT 1 [ RunTime:0.000374s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `t_member` [ RunTime:0.013291s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `t_member` LIMIT 1 [ RunTime:0.000405s ]
+[ sql ] [ SQL ] SELECT * FROM `t_member` LIMIT 0,15 [ RunTime:0.000431s ]
+
+---------------------------------------------------------------
+[ 2017-09-18T14:31:14+08:00 ] 127.0.0.1 127.0.0.1 GET /admin.php/redbag/index.html
+[ log ] test.souho.net/admin.php/redbag/index.html [运行时间：0.142544s][吞吐率：7.02req/s] [内存消耗：2,671.47kb] [文件加载：73]
+[ info ] [ LANG ] D:\www\thinkphp\lang\zh-cn.php
+[ info ] [ BIND ] 'admin'
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'redbag',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => '__cfduid=d399d79fc6ee62203ffee00131381dd171503894340; UM_distinctid=15e2cba69f7707-01e5fcffe3b588-256e6f6f-1fa400-15e2cba69f866a; 5639_seccodec59a47f0=zvwMV1xvn7r0elTXt-u0Ods6gRor-Z9iob4822jDhvhwu3T1_ou; bgColorSelectorPosition=3; bdshare_firstime=1504328165795; 4152_seccodec59a47f0=jAan3mdeMmmbFf5EZm5mTIqLITcqFlNL8BeFghQsFq-gZn-sqZa; session_id_ip=127.0.0.1_dafc388db97ae9a3b058b10d2093cb6b; 57da___switch=F71rf; 57da___uniacid=3; 57da___uid=1; pgv_pvi=7567856640; ECS[visit_times]=1; province=2; city=52; district=500; street=0; street_area=0; dscUrl=privilege.php%3Fact%3Dlogout; admin_type=1; PHPSESSID=mou1c7qp886gv9r0974dhqfbq6; CNZZDATA1256793290=1070085640-1504180058-%7C1505713671',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'referer' => 'http://test.souho.net/admin.php/member/index.html',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/49.0.2623.75 Safari/537.36 LBBROWSER',
+  'upgrade-insecure-requests' => '1',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+  'connection' => 'close',
+  'host' => 'test.souho.net',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\admin\controller\Redbag->index[ D:\www\application\admin\controller\Redbag.php ]
+[ info ] [ VIEW ] D:\www/application/admin\view\redbag\index.html [ array (
+  0 => 'userinfo',
+  1 => 'list',
+  2 => 'pages',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000843s ] mysql:dbname=h5niuniu;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `t_user` [ RunTime:0.016713s ]
+[ sql ] [ SQL ] SELECT * FROM `t_user` WHERE  `id` = 263 LIMIT 1 [ RunTime:0.000688s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `t_redbag` [ RunTime:0.020074s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `t_redbag` LIMIT 1 [ RunTime:0.000271s ]
+[ sql ] [ SQL ] SELECT * FROM `t_redbag` LIMIT 0,15 [ RunTime:0.000322s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `t_member` [ RunTime:0.014522s ]
+[ sql ] [ SQL ] SELECT `nickname` FROM `t_member` WHERE  `id` = 0 LIMIT 1 [ RunTime:0.000263s ]
+[ sql ] [ SQL ] SELECT `nickname` FROM `t_member` WHERE  `id` = 0 LIMIT 1 [ RunTime:0.000259s ]
+[ sql ] [ SQL ] SELECT `nickname` FROM `t_member` WHERE  `id` = 0 LIMIT 1 [ RunTime:0.000288s ]
+[ sql ] [ SQL ] SELECT `nickname` FROM `t_member` WHERE  `id` = 0 LIMIT 1 [ RunTime:0.000285s ]
+[ sql ] [ SQL ] SELECT `nickname` FROM `t_member` WHERE  `id` = 0 LIMIT 1 [ RunTime:0.000265s ]
+[ sql ] [ SQL ] SELECT `nickname` FROM `t_member` WHERE  `id` = 0 LIMIT 1 [ RunTime:0.000386s ]
+[ sql ] [ SQL ] SELECT `nickname` FROM `t_member` WHERE  `id` = 0 LIMIT 1 [ RunTime:0.000298s ]
+[ sql ] [ SQL ] SELECT `nickname` FROM `t_member` WHERE  `id` = 0 LIMIT 1 [ RunTime:0.000251s ]
+[ sql ] [ SQL ] SELECT `nickname` FROM `t_member` WHERE  `id` = 8 LIMIT 1 [ RunTime:0.000270s ]
+[ sql ] [ SQL ] SELECT `nickname` FROM `t_member` WHERE  `id` = 0 LIMIT 1 [ RunTime:0.000223s ]
+[ sql ] [ SQL ] SELECT `nickname` FROM `t_member` WHERE  `id` = 0 LIMIT 1 [ RunTime:0.000236s ]
+[ sql ] [ SQL ] SELECT `nickname` FROM `t_member` WHERE  `id` = 0 LIMIT 1 [ RunTime:0.000212s ]
+[ sql ] [ SQL ] SELECT `nickname` FROM `t_member` WHERE  `id` = 0 LIMIT 1 [ RunTime:0.000211s ]
+[ sql ] [ SQL ] SELECT `nickname` FROM `t_member` WHERE  `id` = 0 LIMIT 1 [ RunTime:0.000214s ]
+[ sql ] [ SQL ] SELECT `nickname` FROM `t_member` WHERE  `id` = 0 LIMIT 1 [ RunTime:0.000269s ]
+
+---------------------------------------------------------------
+[ 2017-09-18T14:31:15+08:00 ] 127.0.0.1 127.0.0.1 GET /admin.php/redbag/index.html
+[ log ] test.souho.net/admin.php/redbag/index.html [运行时间：0.097735s][吞吐率：10.23req/s] [内存消耗：2,526.77kb] [文件加载：70]
+[ info ] [ LANG ] D:\www\thinkphp\lang\zh-cn.php
+[ info ] [ BIND ] 'admin'
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'redbag',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => '__cfduid=d399d79fc6ee62203ffee00131381dd171503894340; UM_distinctid=15e2cba69f7707-01e5fcffe3b588-256e6f6f-1fa400-15e2cba69f866a; 5639_seccodec59a47f0=zvwMV1xvn7r0elTXt-u0Ods6gRor-Z9iob4822jDhvhwu3T1_ou; bgColorSelectorPosition=3; bdshare_firstime=1504328165795; 4152_seccodec59a47f0=jAan3mdeMmmbFf5EZm5mTIqLITcqFlNL8BeFghQsFq-gZn-sqZa; session_id_ip=127.0.0.1_dafc388db97ae9a3b058b10d2093cb6b; 57da___switch=F71rf; 57da___uniacid=3; 57da___uid=1; pgv_pvi=7567856640; ECS[visit_times]=1; province=2; city=52; district=500; street=0; street_area=0; dscUrl=privilege.php%3Fact%3Dlogout; admin_type=1; PHPSESSID=mou1c7qp886gv9r0974dhqfbq6; CNZZDATA1256793290=1070085640-1504180058-%7C1505713671',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'referer' => 'http://test.souho.net/admin.php/redbag/index.html',
+  'accept' => '*/*',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/49.0.2623.75 Safari/537.36 LBBROWSER',
+  'connection' => 'close',
+  'host' => 'test.souho.net',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\admin\controller\Redbag->index[ D:\www\application\admin\controller\Redbag.php ]
+[ info ] [ VIEW ] D:\www/application/admin\view\redbag\index.html [ array (
+  0 => 'userinfo',
+  1 => 'list',
+  2 => 'pages',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000758s ] mysql:dbname=h5niuniu;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `t_user` [ RunTime:0.016437s ]
+[ sql ] [ SQL ] SELECT * FROM `t_user` WHERE  `id` = 263 LIMIT 1 [ RunTime:0.000390s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `t_redbag` [ RunTime:0.016309s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `t_redbag` LIMIT 1 [ RunTime:0.000230s ]
+[ sql ] [ SQL ] SELECT * FROM `t_redbag` LIMIT 0,15 [ RunTime:0.000245s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `t_member` [ RunTime:0.015926s ]
+[ sql ] [ SQL ] SELECT `nickname` FROM `t_member` WHERE  `id` = 0 LIMIT 1 [ RunTime:0.000251s ]
+[ sql ] [ SQL ] SELECT `nickname` FROM `t_member` WHERE  `id` = 0 LIMIT 1 [ RunTime:0.000178s ]
+[ sql ] [ SQL ] SELECT `nickname` FROM `t_member` WHERE  `id` = 0 LIMIT 1 [ RunTime:0.000177s ]
+[ sql ] [ SQL ] SELECT `nickname` FROM `t_member` WHERE  `id` = 0 LIMIT 1 [ RunTime:0.000167s ]
+[ sql ] [ SQL ] SELECT `nickname` FROM `t_member` WHERE  `id` = 0 LIMIT 1 [ RunTime:0.000219s ]
+[ sql ] [ SQL ] SELECT `nickname` FROM `t_member` WHERE  `id` = 0 LIMIT 1 [ RunTime:0.000182s ]
+[ sql ] [ SQL ] SELECT `nickname` FROM `t_member` WHERE  `id` = 0 LIMIT 1 [ RunTime:0.000227s ]
+[ sql ] [ SQL ] SELECT `nickname` FROM `t_member` WHERE  `id` = 0 LIMIT 1 [ RunTime:0.000185s ]
+[ sql ] [ SQL ] SELECT `nickname` FROM `t_member` WHERE  `id` = 8 LIMIT 1 [ RunTime:0.000245s ]
+[ sql ] [ SQL ] SELECT `nickname` FROM `t_member` WHERE  `id` = 0 LIMIT 1 [ RunTime:0.000242s ]
+[ sql ] [ SQL ] SELECT `nickname` FROM `t_member` WHERE  `id` = 0 LIMIT 1 [ RunTime:0.000197s ]
+[ sql ] [ SQL ] SELECT `nickname` FROM `t_member` WHERE  `id` = 0 LIMIT 1 [ RunTime:0.000171s ]
+[ sql ] [ SQL ] SELECT `nickname` FROM `t_member` WHERE  `id` = 0 LIMIT 1 [ RunTime:0.000167s ]
+[ sql ] [ SQL ] SELECT `nickname` FROM `t_member` WHERE  `id` = 0 LIMIT 1 [ RunTime:0.000168s ]
+[ sql ] [ SQL ] SELECT `nickname` FROM `t_member` WHERE  `id` = 0 LIMIT 1 [ RunTime:0.000163s ]
+
+---------------------------------------------------------------
+[ 2017-09-18T14:31:17+08:00 ] 127.0.0.1 127.0.0.1 GET /admin.php/member/index.html
+[ log ] test.souho.net/admin.php/member/index.html [运行时间：0.077863s][吞吐率：12.84req/s] [内存消耗：2,578.88kb] [文件加载：69]
+[ info ] [ LANG ] D:\www\thinkphp\lang\zh-cn.php
+[ info ] [ BIND ] 'admin'
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'member',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => '__cfduid=d399d79fc6ee62203ffee00131381dd171503894340; UM_distinctid=15e2cba69f7707-01e5fcffe3b588-256e6f6f-1fa400-15e2cba69f866a; 5639_seccodec59a47f0=zvwMV1xvn7r0elTXt-u0Ods6gRor-Z9iob4822jDhvhwu3T1_ou; bgColorSelectorPosition=3; bdshare_firstime=1504328165795; 4152_seccodec59a47f0=jAan3mdeMmmbFf5EZm5mTIqLITcqFlNL8BeFghQsFq-gZn-sqZa; session_id_ip=127.0.0.1_dafc388db97ae9a3b058b10d2093cb6b; 57da___switch=F71rf; 57da___uniacid=3; 57da___uid=1; pgv_pvi=7567856640; ECS[visit_times]=1; province=2; city=52; district=500; street=0; street_area=0; dscUrl=privilege.php%3Fact%3Dlogout; admin_type=1; PHPSESSID=mou1c7qp886gv9r0974dhqfbq6; CNZZDATA1256793290=1070085640-1504180058-%7C1505713671',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'referer' => 'http://test.souho.net/admin.php/redbag/index.html',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/49.0.2623.75 Safari/537.36 LBBROWSER',
+  'upgrade-insecure-requests' => '1',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+  'connection' => 'close',
+  'host' => 'test.souho.net',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\admin\controller\Common->index[ D:\www\application\admin\controller\Common.php ]
+[ info ] [ VIEW ] D:\www/application/admin\view\member\index.html [ array (
+  0 => 'userinfo',
+  1 => 'list',
+  2 => 'pages',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000945s ] mysql:dbname=h5niuniu;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `t_user` [ RunTime:0.017193s ]
+[ sql ] [ SQL ] SELECT * FROM `t_user` WHERE  `id` = 263 LIMIT 1 [ RunTime:0.000426s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `t_member` [ RunTime:0.013782s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `t_member` LIMIT 1 [ RunTime:0.000280s ]
+[ sql ] [ SQL ] SELECT * FROM `t_member` LIMIT 0,15 [ RunTime:0.000476s ]
+
+---------------------------------------------------------------
+[ 2017-09-18T14:31:17+08:00 ] 127.0.0.1 127.0.0.1 GET /admin.php/member/index.html
+[ log ] test.souho.net/admin.php/member/index.html [运行时间：0.069985s][吞吐率：14.29req/s] [内存消耗：2,578.54kb] [文件加载：69]
+[ info ] [ LANG ] D:\www\thinkphp\lang\zh-cn.php
+[ info ] [ BIND ] 'admin'
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'member',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => '__cfduid=d399d79fc6ee62203ffee00131381dd171503894340; UM_distinctid=15e2cba69f7707-01e5fcffe3b588-256e6f6f-1fa400-15e2cba69f866a; 5639_seccodec59a47f0=zvwMV1xvn7r0elTXt-u0Ods6gRor-Z9iob4822jDhvhwu3T1_ou; bgColorSelectorPosition=3; bdshare_firstime=1504328165795; 4152_seccodec59a47f0=jAan3mdeMmmbFf5EZm5mTIqLITcqFlNL8BeFghQsFq-gZn-sqZa; session_id_ip=127.0.0.1_dafc388db97ae9a3b058b10d2093cb6b; 57da___switch=F71rf; 57da___uniacid=3; 57da___uid=1; pgv_pvi=7567856640; ECS[visit_times]=1; province=2; city=52; district=500; street=0; street_area=0; dscUrl=privilege.php%3Fact%3Dlogout; admin_type=1; PHPSESSID=mou1c7qp886gv9r0974dhqfbq6; CNZZDATA1256793290=1070085640-1504180058-%7C1505713671',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'referer' => 'http://test.souho.net/admin.php/member/index.html',
+  'accept' => '*/*',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/49.0.2623.75 Safari/537.36 LBBROWSER',
+  'connection' => 'close',
+  'host' => 'test.souho.net',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\admin\controller\Common->index[ D:\www\application\admin\controller\Common.php ]
+[ info ] [ VIEW ] D:\www/application/admin\view\member\index.html [ array (
+  0 => 'userinfo',
+  1 => 'list',
+  2 => 'pages',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000805s ] mysql:dbname=h5niuniu;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `t_user` [ RunTime:0.012473s ]
+[ sql ] [ SQL ] SELECT * FROM `t_user` WHERE  `id` = 263 LIMIT 1 [ RunTime:0.000427s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `t_member` [ RunTime:0.011740s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `t_member` LIMIT 1 [ RunTime:0.000289s ]
+[ sql ] [ SQL ] SELECT * FROM `t_member` LIMIT 0,15 [ RunTime:0.000444s ]
+
+---------------------------------------------------------------
+[ 2017-09-18T23:01:07+08:00 ] 127.0.0.1 127.0.0.1 GET /
+[ log ] test.souho.net/ [运行时间：0.532273s][吞吐率：1.88req/s] [内存消耗：2,404.83kb] [文件加载：63]
+[ info ] [ LANG ] D:\www\thinkphp\lang\zh-cn.php
+[ info ] [ BIND ] 'index'
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => NULL,
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => '__cfduid=d399d79fc6ee62203ffee00131381dd171503894340; UM_distinctid=15e2cba69f7707-01e5fcffe3b588-256e6f6f-1fa400-15e2cba69f866a; 5639_seccodec59a47f0=zvwMV1xvn7r0elTXt-u0Ods6gRor-Z9iob4822jDhvhwu3T1_ou; bgColorSelectorPosition=3; bdshare_firstime=1504328165795; 4152_seccodec59a47f0=jAan3mdeMmmbFf5EZm5mTIqLITcqFlNL8BeFghQsFq-gZn-sqZa; session_id_ip=127.0.0.1_dafc388db97ae9a3b058b10d2093cb6b; 57da___switch=F71rf; 57da___uniacid=3; 57da___uid=1; pgv_pvi=7567856640; ECS[visit_times]=1; province=2; city=52; district=500; street=0; street_area=0; dscUrl=privilege.php%3Fact%3Dlogout; admin_type=1; PHPSESSID=mou1c7qp886gv9r0974dhqfbq6; CNZZDATA1256793290=1070085640-1504180058-%7C1505713671',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/49.0.2623.75 Safari/537.36 LBBROWSER',
+  'upgrade-insecure-requests' => '1',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+  'connection' => 'close',
+  'host' => 'test.souho.net',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\index\controller\Index->index[ D:\www\application\index\controller\Index.php ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.002892s ] mysql:dbname=h5niuniu;host=127.0.0.1;port=3306;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `t_nav` [ RunTime:0.103048s ]
+[ sql ] [ SQL ] SELECT * FROM `t_nav` WHERE  `pid` = 0 ORDER BY `sort` [ RunTime:0.000626s ]
+[ sql ] [ SQL ] SELECT * FROM `t_nav` WHERE  `pid` = 1 ORDER BY `sort` [ RunTime:0.000521s ]
+[ sql ] [ SQL ] SELECT * FROM `t_nav` WHERE  `pid` = 2 ORDER BY `sort` [ RunTime:0.000383s ]
+[ sql ] [ SQL ] SELECT * FROM `t_nav` WHERE  `pid` = 3 ORDER BY `sort` [ RunTime:0.000345s ]
+[ sql ] [ SQL ] SELECT * FROM `t_nav` WHERE  `pid` = 5 ORDER BY `sort` [ RunTime:0.000309s ]
+[ sql ] [ SQL ] SELECT * FROM `t_nav` WHERE  `pid` = 6 ORDER BY `sort` [ RunTime:0.000279s ]
+[ sql ] [ SQL ] SELECT * FROM `t_nav` WHERE  `pid` = 4 ORDER BY `sort` [ RunTime:0.000260s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `t_ad` [ RunTime:0.235470s ]
+[ sql ] [ SQL ] SELECT * FROM `t_ad` WHERE  `status` = 1 [ RunTime:0.000340s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `t_product` [ RunTime:0.018788s ]
+[ sql ] [ SQL ] SELECT * FROM `t_product` WHERE  `is_top` = 1 LIMIT 2 [ RunTime:0.000736s ]
+[ sql ] [ SQL ] SELECT * FROM `t_product` WHERE  `is_rec` = 1 LIMIT 3 [ RunTime:0.000414s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `t_category` [ RunTime:0.119611s ]
+[ sql ] [ SQL ] SELECT * FROM `t_category` WHERE  `status` = 1  AND `pid` = 0 [ RunTime:0.000368s ]
+[ sql ] [ SQL ] SELECT * FROM `t_category` WHERE  `status` = 1  AND `pid` = 0 LIMIT 5 [ RunTime:0.000275s ]
+[ sql ] [ SQL ] SELECT * FROM `t_category` WHERE  `pid` = 348 [ RunTime:0.000321s ]
+[ sql ] [ SQL ] SELECT * FROM `t_category` WHERE  `pid` = 353 [ RunTime:0.000561s ]
+[ sql ] [ SQL ] SELECT * FROM `t_category` WHERE  `pid` = 354 [ RunTime:0.000279s ]
+[ sql ] [ SQL ] SELECT * FROM `t_category` WHERE  `pid` = 355 [ RunTime:0.000267s ]
+[ sql ] [ SQL ] SELECT * FROM `t_product` WHERE  `status` = 1  AND `category_id` IN (353,354,355,348) LIMIT 8 [ RunTime:0.000506s ]
+[ sql ] [ SQL ] SELECT * FROM `t_category` WHERE  `pid` = 356 [ RunTime:0.000288s ]
+[ sql ] [ SQL ] SELECT * FROM `t_product` WHERE  `status` = 1  AND `category_id` IN (356) LIMIT 8 [ RunTime:0.000351s ]
+
+---------------------------------------------------------------
+[ 2017-09-18T23:01:07+08:00 ] 127.0.0.1 127.0.0.1 GET /game.php
+[ log ] test.souho.net/game.php [运行时间：0.026732s][吞吐率：37.41req/s] [内存消耗：1,531.80kb] [文件加载：57]
+[ info ] [ LANG ] D:\www\thinkphp\lang\zh-cn.php
+[ info ] [ BIND ] 'game'
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'game',
+    1 => NULL,
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => '__cfduid=d399d79fc6ee62203ffee00131381dd171503894340; UM_distinctid=15e2cba69f7707-01e5fcffe3b588-256e6f6f-1fa400-15e2cba69f866a; 5639_seccodec59a47f0=zvwMV1xvn7r0elTXt-u0Ods6gRor-Z9iob4822jDhvhwu3T1_ou; bgColorSelectorPosition=3; bdshare_firstime=1504328165795; 4152_seccodec59a47f0=jAan3mdeMmmbFf5EZm5mTIqLITcqFlNL8BeFghQsFq-gZn-sqZa; session_id_ip=127.0.0.1_dafc388db97ae9a3b058b10d2093cb6b; 57da___switch=F71rf; 57da___uniacid=3; 57da___uid=1; pgv_pvi=7567856640; ECS[visit_times]=1; province=2; city=52; district=500; street=0; street_area=0; dscUrl=privilege.php%3Fact%3Dlogout; admin_type=1; PHPSESSID=mou1c7qp886gv9r0974dhqfbq6; CNZZDATA1256793290=1070085640-1504180058-%7C1505713671',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/49.0.2623.75 Safari/537.36 LBBROWSER',
+  'upgrade-insecure-requests' => '1',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+  'connection' => 'close',
+  'host' => 'test.souho.net',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2017-09-18T23:01:08+08:00 ] 127.0.0.1 127.0.0.1 GET /game.php/login/index.html
+[ log ] test.souho.net/game.php/login/index.html [运行时间：0.056402s][吞吐率：17.73req/s] [内存消耗：2,452.10kb] [文件加载：117]
+[ info ] [ LANG ] D:\www\thinkphp\lang\zh-cn.php
+[ info ] [ BIND ] 'game'
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'game',
+    1 => 'login',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => '__cfduid=d399d79fc6ee62203ffee00131381dd171503894340; UM_distinctid=15e2cba69f7707-01e5fcffe3b588-256e6f6f-1fa400-15e2cba69f866a; 5639_seccodec59a47f0=zvwMV1xvn7r0elTXt-u0Ods6gRor-Z9iob4822jDhvhwu3T1_ou; bgColorSelectorPosition=3; bdshare_firstime=1504328165795; 4152_seccodec59a47f0=jAan3mdeMmmbFf5EZm5mTIqLITcqFlNL8BeFghQsFq-gZn-sqZa; session_id_ip=127.0.0.1_dafc388db97ae9a3b058b10d2093cb6b; 57da___switch=F71rf; 57da___uniacid=3; 57da___uid=1; pgv_pvi=7567856640; ECS[visit_times]=1; province=2; city=52; district=500; street=0; street_area=0; dscUrl=privilege.php%3Fact%3Dlogout; admin_type=1; PHPSESSID=mou1c7qp886gv9r0974dhqfbq6; CNZZDATA1256793290=1070085640-1504180058-%7C1505713671',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/49.0.2623.75 Safari/537.36 LBBROWSER',
+  'upgrade-insecure-requests' => '1',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+  'connection' => 'close',
+  'host' => 'test.souho.net',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ RUN ] app\game\controller\Login->index[ D:\www\application\game\controller\Login.php ]
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
+[ 2017-09-18T23:01:18+08:00 ] 127.0.0.1 127.0.0.1 GET //game.php/index/index.html
+[ log ] test.souho.net//game.php/index/index.html [运行时间：0.027925s][吞吐率：35.81req/s] [内存消耗：1,531.91kb] [文件加载：57]
+[ info ] [ LANG ] D:\www\thinkphp\lang\zh-cn.php
+[ info ] [ BIND ] 'game'
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'game',
+    1 => 'index',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => '__cfduid=d399d79fc6ee62203ffee00131381dd171503894340; UM_distinctid=15e2cba69f7707-01e5fcffe3b588-256e6f6f-1fa400-15e2cba69f866a; 5639_seccodec59a47f0=zvwMV1xvn7r0elTXt-u0Ods6gRor-Z9iob4822jDhvhwu3T1_ou; bgColorSelectorPosition=3; bdshare_firstime=1504328165795; 4152_seccodec59a47f0=jAan3mdeMmmbFf5EZm5mTIqLITcqFlNL8BeFghQsFq-gZn-sqZa; session_id_ip=127.0.0.1_dafc388db97ae9a3b058b10d2093cb6b; 57da___switch=F71rf; 57da___uniacid=3; 57da___uid=1; pgv_pvi=7567856640; ECS[visit_times]=1; province=2; city=52; district=500; street=0; street_area=0; dscUrl=privilege.php%3Fact%3Dlogout; admin_type=1; PHPSESSID=mou1c7qp886gv9r0974dhqfbq6; CNZZDATA1256793290=1070085640-1504180058-%7C1505713671',
+  'accept-language' => 'zh-CN,zh;q=0.8',
+  'accept-encoding' => 'gzip, deflate, sdch',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/49.0.2623.75 Safari/537.36 LBBROWSER',
+  'upgrade-insecure-requests' => '1',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+  'connection' => 'close',
+  'host' => 'test.souho.net',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ LOG ] INIT File
+
+---------------------------------------------------------------
