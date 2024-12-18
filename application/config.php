@@ -19,7 +19,7 @@ return [
     // 应用调试模式
     'app_debug'              => true,
     // 应用Trace
-    'app_trace'              => false,
+    'app_trace'              => true,
     // 应用模式状态
     'app_status'             => '',
     // 是否支持多模块
@@ -238,5 +238,30 @@ return [
         'type'      => 'bootstrap',
         'var_page'  => 'page',
         'list_rows' => 15,
+    ],
+
+    'queue' => [
+        'driver' => 'redis',
+        // 其他驱动配置...
+        'redis'    => [
+            'type'       => 'redis',
+            'queue'      => 'default',
+            'host'       => '127.0.0.1',
+            'port'       => 6379,
+            'password'   => '',
+            'select'     => 0,
+            'timeout'    => 0,
+            'persistent' => false,
+        ],
+    ],
+    'redis'    => [
+        'type'       => 'redis',
+        'queue'      => 'default',
+        'host'       => '127.0.0.1',
+        'port'       => 6379,
+        'password'   => '',
+        'select'     => 0,
+        'timeout'    => 0,
+        'persistent' => false,
     ],
 ];

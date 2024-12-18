@@ -1,11 +1,11 @@
 <!DOCTYPE>
 <html>
 <head>
-    <title>牛牛房间{$room.room_num}【{eq name="gamerule['gametype']" value="1"}牛牛上庄{/eq}
-        {eq name="gamerule['gametype']" value="2"}固定庄家{/eq}
-        {eq name="gamerule['gametype']" value="3"}自由抢庄{/eq}
-        {eq name="gamerule['gametype']" value="4"}明牌抢庄{/eq}
-        {eq name="gamerule['gametype']" value="5"}通比牛牛{/eq}】</title>
+    <title>石头剪刀布{$room.room_num}【{eq name="gamerule['gametype']" value="1"}石头剪刀布{/eq}
+        {eq name="gamerule['gametype']" value="2"}石头剪刀布{/eq}
+        {eq name="gamerule['gametype']" value="3"}石头剪刀布{/eq}
+        {eq name="gamerule['gametype']" value="4"}石头剪刀布{/eq}
+        {eq name="gamerule['gametype']" value="5"}石头剪刀布{/eq}】</title>
     <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
     <meta http-equiv="X-UA-Compatible" content="IE=Edge，chrome=1">
@@ -30,6 +30,10 @@
 <body>
 
 <style>
+    .selected {
+        border: 2px solid blue; /* 选中的图片将有一个蓝色的边框 */
+    }
+
     .photo{display: none;}
     .msgshow{
         position: fixed;
@@ -46,7 +50,7 @@
     .cards .poker{width:12%; display: inline-block;}
     .cards .poker img{width:100%; vertical-align: bottom;}
     .cardsbox .poker {width: 40px; display:inline-block;}
-    .cardsbox .poker img{width:100%;}
+    .cardsbox .poker img{width:100%; cursor: pointer; /* 让图片看起来像是可以点击的 */}
     .cardsbox .box1 {position: absolute; left: 0px; z-index: 1;}
     .cardsbox .box2 {position: absolute; left: 10px; z-index: 1;}
     .cardsbox .box3 {position: absolute; left: 20px; z-index: 1;}
@@ -101,6 +105,8 @@
 <!-- 游戏准备按钮 -->
 <img id="gameready" onclick="gameready1(1);" src="__STATIC__/game/img/init.png" style="position:absolute;top: 50%; left: 50%; z-index: 3; margin-left:-50px; width: 100px; {eq name="memberinfo['gamestatus']" value="1"}display:none;{/eq}">
 
+<!-- 确定 -->
+<!--<img id="gameSure" onclick="gamesure();" src="__STATIC__/game/img/queding.jpg" style="position:absolute;top: 50%; left: 50%; z-index: 3; margin-left:-50px; width: 100px; {eq name="memberinfo['gamestatus']" value="0"}display:none;{/eq}">-->
 
 
 
@@ -119,35 +125,35 @@
 
             <p>创建房间,游戏未进行,不消耗房卡</p>
             <li>模式:<span>
-                {eq name="gamerule['gametype']" value="1"}牛牛上庄{/eq}
-                {eq name="gamerule['gametype']" value="2"}固定庄家{/eq}
-                {eq name="gamerule['gametype']" value="3"}自由抢庄{/eq}
-                {eq name="gamerule['gametype']" value="4"}明牌抢庄{/eq}
-                {eq name="gamerule['gametype']" value="5"}通比牛牛{/eq}
+                {eq name="gamerule['gametype']" value="1"}石头剪刀布{/eq}
+<!--                {eq name="gamerule['gametype']" value="2"}固定庄家{/eq}-->
+<!--                {eq name="gamerule['gametype']" value="3"}自由抢庄{/eq}-->
+<!--                {eq name="gamerule['gametype']" value="4"}明牌抢庄{/eq}-->
+<!--                {eq name="gamerule['gametype']" value="5"}通比牛牛{/eq}-->
             </span></li>
             <li>底分:<span>{$gamerule['score']}分</span></li>
 
             <li>规则:<span>
                 {eq name="gamerule['rule']" value="1"}
-                牛牛x3 牛九x2 牛八x2
+                石头 赢 剪刀 | 剪刀 赢 布 | 布赢石头
                 {/eq}
 
                  {eq name="gamerule['rule']" value="2"}
-                牛牛x4 牛九x3 牛八x2 牛七x2
+                石头 赢 剪刀 | 剪刀 赢 布 | 布赢石头
                 {/eq}
             </span></li>
 
-            <li>牌型:<span>
-                {notempty name="gamerule['types'][1]"}
-                五花牛(5倍)
-                {/notempty}
-                {notempty name="gamerule['types'][2]"}
-                炸弹牛(6倍)
-                {/notempty}
-                {notempty name="gamerule['types'][3]"}
-                五小牛(8倍)
-                {/notempty}
-            </span></li>
+<!--            <li>牌型:<span>-->
+<!--                {notempty name="gamerule['types'][1]"}-->
+<!--                五花牛(5倍)-->
+<!--                {/notempty}-->
+<!--                {notempty name="gamerule['types'][2]"}-->
+<!--                炸弹牛(6倍)-->
+<!--                {/notempty}-->
+<!--                {notempty name="gamerule['types'][3]"}-->
+<!--                五小牛(8倍)-->
+<!--                {/notempty}-->
+<!--            </span></li>-->
             <li>局数:<span>
 {eq name="gamerule['gamenum']" value="10:1"}
                 10局x1房卡
@@ -187,7 +193,7 @@
     <p style="color: white;margin:7rem auto;width: 16rem;">
         <span style="display: inline-block;width: 1.5rem;height: 1.5rem;border-radius: 50%;background: red;color: white;text-align: center;line-height: 1.5rem;margin-right: 0.3rem;">1</span>请点击右上角<img src="__STATIC__/game/img/ico1.png" style="width: 1.5rem;vertical-align: middle;margin:0 0.3rem;">按钮<br/><br/>
         <span style="display: inline-block;width: 1.5rem;height: 1.5rem;border-radius: 50%;background: red;color: white;text-align: center;line-height: 1.5rem;margin-right: 0.3rem;">2</span>选择<img src="__STATIC__/game/img/ico2.png" style="width: 1.5rem;vertical-align: middle;margin:0 0.3rem;">发送给朋友来要请好友<br/><br/>
-        <span style="color: #E6A43F;">本产品仅供娱乐，禁止用于赌博</span>
+<!--        <span style="color: #E6A43F;">本产品仅供娱乐，禁止用于赌博</span>-->
     </p>
 </div>
 
@@ -215,10 +221,13 @@
                     <div class="poker box1"><img class="pic1" src="__STATIC__/game/img/pai/0.png"></div>
                     <div class="poker box2"><img class="pic2" src="__STATIC__/game/img/pai/0.png"></div>
                     <div class="poker box3"><img class="pic3" src="__STATIC__/game/img/pai/0.png"></div>
-                    <div class="poker box4"><img class="pic4" src="__STATIC__/game/img/pai/0.png"></div>
-                    <div class="poker box5"><img class="pic5" src="__STATIC__/game/img/pai/0.png"></div>
+<!--                    <div class="poker box4"><img class="pic4" src="__STATIC__/game/img/pai/0.png"></div>-->
+<!--                    <div class="poker box5"><img class="pic5" src="__STATIC__/game/img/pai/0.png"></div>-->
                     <div class="niuname">未知</div>
-                    <div class="xiazhubox"><img class="bankerimg" src="__STATIC__/game/img/qiangzhuang.png"><img src="__STATIC__/game/img/X-1.png" class="multipleimg">  </div>
+                    <div class="xiazhubox">
+                        <img class="bankerimg" src="__STATIC__/game/img/qiangzhuang.png">
+                        <img src="__STATIC__/game/img/X-1.png" class="multipleimg">
+                    </div>
                 </div>
             </div>
             <div class="photo" id="player_2">
@@ -288,14 +297,19 @@
                     <div class="poker box1"><img class="pic1" src="__STATIC__/game/img/pai/0.png"></div>
                     <div class="poker box2"><img class="pic2" src="__STATIC__/game/img/pai/0.png"></div>
                     <div class="poker box3"><img class="pic3" src="__STATIC__/game/img/pai/0.png"></div>
-                    <div class="poker box4"><img class="pic4" src="__STATIC__/game/img/pai/0.png"></div>
-                    <div class="poker box5"><img class="pic5" src="__STATIC__/game/img/pai/0.png"></div>
+<!--                    <div class="poker box4"><img class="pic4" src="__STATIC__/game/img/pai/0.png"></div>-->
+<!--                    <div class="poker box5"><img class="pic5" src="__STATIC__/game/img/pai/0.png"></div>-->
                     <div class="niuname">未知</div>
-                    <div class="xiazhubox"><img class="bankerimg" src="__STATIC__/game/img/qiangzhuang.png"><img src="__STATIC__/game/img/X-1.png" class="multipleimg"> </div>
+                    <div class="xiazhubox">
+                        <img class="bankerimg" src="__STATIC__/game/img/qiangzhuang.png">
+                        <img src="__STATIC__/game/img/X-1.png" class="multipleimg">
+                    </div>
                 </div>
             </div>
         </div>
-        <p class="last-time"><span class="text" style="margin-top:0; width:100%; font-size: 14px;">等待摊牌</span><span class="int">15</span></p>
+
+
+        <p class="last-time"><span class="text" style="margin-top:0; width:100%; font-size: 14px;">等待PK</span><span class="int">15</span></p>
 
 
 
@@ -319,23 +333,28 @@
                 <img onclick="setmultiple(3);" src="__STATIC__/game/img/three.png">
             </div>
             <div class="qiang" style="display: none; margin-top:12px;">
-                <img onclick="setbanker(1);" src="__STATIC__/game/img/one.png">
+<!--                <img onclick="setbanker(1);" src="__STATIC__/game/img/one.png">-->
 
 
 
-                <img onclick="setbanker(2);" src="__STATIC__/game/img/two.png">
-                <img onclick="setbanker(4);" src="__STATIC__/game/img/4.png">
+<!--                <img onclick="setbanker(2);" src="__STATIC__/game/img/two.png">-->
+<!--                <img onclick="setbanker(4);" src="__STATIC__/game/img/4.png">-->
 
-                <img onclick="setbanker(0);" src="__STATIC__/game/img/buqiang.png">
+<!--                <img onclick="setbanker(0);" src="__STATIC__/game/img/buqiang.png">-->
+                <img onclick="sureSelect();" src="__STATIC__/game/img/queding.jpg">
             </div>
             <div class="pai">
-
-                <div class="poker box1" onclick="poker.ajaxshow('{:url('showone')}',0,'__STATIC__/game/img/pai/',this,function(){ mp3play('mp3fapai');});"><img class="pk" src="__STATIC__/game/img/pai/0.png"></div>
-                <div class="poker box2" onclick="poker.ajaxshow('{:url('showone')}',1,'__STATIC__/game/img/pai/',this,function(){ mp3play('mp3fapai');});"><img class="pk" src="__STATIC__/game/img/pai/0.png"></div>
-                <div class="poker box3" onclick="poker.ajaxshow('{:url('showone')}',2,'__STATIC__/game/img/pai/',this,function(){ mp3play('mp3fapai');});"><img class="pk" src="__STATIC__/game/img/pai/0.png"></div>
-                <div class="poker box4" onclick="poker.ajaxshow('{:url('showone')}',3,'__STATIC__/game/img/pai/',this,function(){ mp3play('mp3fapai');});"><img class="pk" src="__STATIC__/game/img/pai/0.png"></div>
-                <div class="poker box5" onclick="poker.ajaxshow('{:url('showone')}',4,'__STATIC__/game/img/pai/',this,function(){ mp3play('mp3fapai');});"><img class="pk" src="__STATIC__/game/img/pai/0.png"></div>
-            </div><div class="niuname">未知</div>
+                <div class="poker box1" onclick="showselect(this,3);"><img class="pk" src="__STATIC__/game/img/shitoujiandaobu/shitou.jpg"></div>
+                <div class="poker box2" onclick="showselect(this,2);"><img class="pk" src="__STATIC__/game/img/shitoujiandaobu/jiandao.jpg"></div>
+                <div class="poker box3" onclick="showselect(this,1);"><img class="pk" src="__STATIC__/game/img/shitoujiandaobu/bu.jpg"></div>
+                <input type="hidden" name="paiValue" value="">
+<!--                <div class="poker box1" onclick="poker.ajaxshow('{:url('showone')}',0,'__STATIC__/game/img/pai/',this,function(){ mp3play('mp3fapai');});"><img class="pk" src="__STATIC__/game/img/pai/0.png"></div>-->
+<!--                <div class="poker box2" onclick="poker.ajaxshow('{:url('showone')}',1,'__STATIC__/game/img/pai/',this,function(){ mp3play('mp3fapai');});"><img class="pk" src="__STATIC__/game/img/pai/0.png"></div>-->
+<!--                <div class="poker box3" onclick="poker.ajaxshow('{:url('showone')}',2,'__STATIC__/game/img/pai/',this,function(){ mp3play('mp3fapai');});"><img class="pk" src="__STATIC__/game/img/pai/0.png"></div>-->
+<!--                <div class="poker box4" onclick="poker.ajaxshow('{:url('showone')}',3,'__STATIC__/game/img/pai/',this,function(){ mp3play('mp3fapai');});"><img class="pk" src="__STATIC__/game/img/pai/0.png"></div>-->
+<!--                <div class="poker box5" onclick="poker.ajaxshow('{:url('showone')}',4,'__STATIC__/game/img/pai/',this,function(){ mp3play('mp3fapai');});"><img class="pk" src="__STATIC__/game/img/pai/0.png"></div>-->
+            </div>
+            <div class="niuname">未知</div>
         </div>
     </div>
     <div class="msg" id="player_99">
@@ -347,7 +366,10 @@
 
             <span style="top: -34px;" class="gameret"></span>
 
-            <div class="xiazhubox"><img class="bankerimg" src="__STATIC__/game/img/qiangzhuang.png"><img src="__STATIC__/game/img/X-1.png" class="multipleimg"> </div>
+            <div class="xiazhubox">
+                <img class="bankerimg" src="__STATIC__/game/img/qiangzhuang.png">
+                <img src="__STATIC__/game/img/X-1.png" class="multipleimg">
+            </div>
         </div>
         <div class="base-bet">
             <p>底注：<span>{$gamerule.score}</span>分</p>
@@ -385,8 +407,8 @@
     wx.config({$jsconfig});
     wx.ready(function () {
         var shareData = {
-            title: '好友约你牛牛（房间号：{$room.room_num}）',
-            desc: '模式：{eq name="gamerule['gametype']" value="1"}牛牛上庄{/eq}{eq name="gamerule['gametype']" value="2"}固定庄家{/eq}{eq name="gamerule['gametype']" value="3"}自由抢庄{/eq}{eq name="gamerule['gametype']" value="4"}明牌抢庄{/eq}{eq name="gamerule['gametype']" value="5"}通比牛牛{/eq} 底分：{$gamerule['score']}分 规则:{eq name="gamerule['rule']" value="1"}牛牛x3 牛九x2 牛八x2{/eq}{eq name="gamerule['rule']" value="2"}牛牛x4 牛九x3 牛八x2 牛七x2{/eq}',
+            title: '好友约你石头剪刀布（房间号：{$room.room_num}）',
+            desc: '模式：{eq name="gamerule['gametype']" value="1"}石头剪刀布{/eq}{eq name="gamerule['gametype']" value="2"}石头剪刀布{/eq}{eq name="gamerule['gametype']" value="3"}石头剪刀布{/eq}{eq name="gamerule['gametype']" value="4"}石头剪刀布{/eq}{eq name="gamerule['gametype']" value="5"}石头剪刀布{/eq} 底分：{$gamerule['score']}分 规则:{eq name="gamerule['rule']" value="1"}牛牛x3 牛九x2 牛八x2{/eq}{eq name="gamerule['rule']" value="2"}牛牛x4 牛九x3 牛八x2 牛七x2{/eq}',
             link: '',
             imgUrl: 'http://iis.gdxiaoe.com/niu.png',
             success: function () {
@@ -403,6 +425,50 @@
 
 <script type="text/javascript">
 
+    //选择数据
+    function showselect(element,value){
+        if (value != 1 && value != 2 && value != 3) {
+            alter("select is error");
+            return
+        }
+        $('input[name="paiValue"]').val(value);
+        //增加选择的特效
+        $('.pai .poker').removeClass('selected');
+        $(element).addClass('selected');
+    }
+
+    //提交选择的数据
+    function sureSelect() {
+        value =  $('input[name="paiValue"]').val();
+        if (value != 1 && value != 2 && value != 3) {
+            alert("select is error");
+            return;
+        }
+
+        $.post('{:url('sureSelect')}', {selectPai:value}, function (ret) {
+            $('.poker').removeAttr('onclick'); //去掉点击事件
+            $(".qiang").hide();
+            //牌只留下选中的牌
+            if (value == 1) {
+                $('.cards .pai').html('<div class="poker box1 open showed">' +
+                    '<img class="pk" src="__STATIC__/game/img/shitoujiandaobu/shitou.jpg"></div>\n' +
+                    '                <input type="hidden" name="paiValue" value="1">')
+            }
+            if (value == 2) {
+                $('.cards .pai').html('<div class="poker box2 open showed">' +
+                    '<img class="pk" src="__STATIC__/game/img/shitoujiandaobu/jiandao.jpg"></div>\n' +
+                    '                <input type="hidden" name="paiValue" value="2">')
+            }
+            if (value == 3) {
+                $('.cards .pai').html('<div class="poker box3 open showed">' +
+                    '<img class="pk" src="__STATIC__/game/img/shitoujiandaobu/bu.jpg"></div>\n' +
+                    '                <input type="hidden" name="paiValue" value="3">')
+            }
+
+        }, 'json'
+    );
+    }
+
     function tanpaicountdown1(initcount){
         $('.qiang').hide();
         if(initcount == 0){
@@ -418,20 +484,24 @@
         $('.last-time').show();
     }
 
+    //摊牌倒计时
     function tanpaicountdown(initcount){
-        $('.qiang').hide();
+        // initcount = 1800 //设置为固定值
+        //显示出提交的按钮
+        $('.qiang').show();
         if(initcount == 0){
             $('.last-time').hide();
             return false;
         }
-        $('.last-time span.text').html('等待摊牌');
+        $('.last-time span.text').html('等待PK');
         $('.last-time span.int').countdown({initcount:initcount,end:function(){
             $('.last-time').hide();
-            tanpai();
+            // tanpai();
         }});
         $('.last-time').show();
     }
 
+    //游戏开始了
     function fapaicountdown(initcount){
         if(initcount == 0){
             $('.last-time').hide();
@@ -445,13 +515,14 @@
         $('.last-time').show();
     }
 
+    //设置强牌倒计时 - 修改为 确定牌倒计时
     function setbankercountdown(initcount){
         $('.qiang').show();
         if(initcount == 0){
             $('.last-time').hide();
             return false;
         }
-        $('.last-time span.text').html('抢庄');
+        $('.last-time span.text').html('结束时间');
         $('.last-time span.int').countdown({initcount:initcount,end:function(){
             $('.last-time').hide();
             setbanker(0);
@@ -499,6 +570,8 @@
         var json = eval('(' + str + ')');
         return json;
     }
+
+
     $(document).ready(function () {
         // 连接服务端
         var socket = io('http://' + document.domain + ':2120');
@@ -508,7 +581,6 @@
                 socket.emit('login', {$memberinfo.id});
             }, 'json'
             );
-
         });
 
         socket.on('update_online_count', function (userlist) {
@@ -522,10 +594,9 @@
         socket.on('update_offline', function (userid) {
             //有人退出\断线时
             $.post('{:url('comeout')}', {memberid:userid}, function (ret) {
-                //$('.member__'+userid).hide();
+                // $('.member__'+userid).hide();
             }, 'json'
             );
-
         });
 
         // 后端推送来消息时
@@ -535,6 +606,8 @@
             if (ret.type == 1) {
                 msgshow(ret.info, ret.from,ret.msgid);
             }
+
+            //显示金币的动画
             if (ret.type == 999) {
                 console.log(ret.data);
                 if(ret.end == 1){
@@ -547,9 +620,8 @@
                     $('.niuname').hide();
                     //移除准备按钮，不能再开始游戏了
 
-                    if(ret.end == 1){
+                    if(ret.end == 1){ //结束等于 1 则代表不能开始游戏了
                         setTimeout(function(){
-
                             $('.window iframe').attr('src', window.location.href);
                             $('.window').show();
                             $('.window iframe').height($(window).height());
@@ -565,80 +637,91 @@
 
             //传来房间中其它会员的信息，得到后加入到界面中显示出来，数据是一个json数组
             if(ret.type == 4) {
+                console.log("========start==============")
+                console.log(ret)
+                console.log("========end==============")
 
+                //更新玩的次数
                 $('#playcount').html(ret.room['playcount']);
                 //更新房卡
                 $('#roomcards').html(ret.room['room_cards_num']);
-
+                //金币
                 $('.moneybox').text(ret.money);
-                $('.zhuangimg').hide();
-                if(ret.isbanker == 1){
-                    if(ret.issetbanker == 1){
 
-                        if (ret.room.rule.gametype != 5) {
-                            $('.member__{$memberinfo.id}').find('.zhuangimg').show();
-                        }
-                        if(ret.room.rule.gametype != 1 && ret.room.rule.gametype != 5 && ret.room.rule.gametype != 2){
-                            $('.member__{$memberinfo.id}').find('.bankerimg').show();
-                            $('.member__{$memberinfo.id}').find('.multipleimg').attr('src', '__STATIC__/game/img/X-' + ret.multiple + '.png').show();
-                        }
-
-
-                    }
-                }else{
-                    $('.member__{$memberinfo.id}').find('.bankerimg').hide();
-                    $('.member__{$memberinfo.id}').find('.zhuangimg').hide();
-                    if(ret.issetmultiple == 1) {
-                        if (ret.room.rule.gametype != 5) {
-                            $('.member__{$memberinfo.id}').find('.multipleimg').attr('src', '__STATIC__/game/img/X-' + ret.multiple + '.png').show();
-                        }
-                    }else{
-                        $('.member__{$memberinfo.id}').find('.multipleimg').hide();
-                    }
+                if(ret.banker == 1) {
+                    $('.member__{$memberinfo.id}').find('.zhuangimg').show();
                 }
+                // $('.member__{$memberinfo.id}').find('.bankerimg').show();
+                $('.member__{$memberinfo.id}').find('.multipleimg').attr('src', '__STATIC__/game/img/X-' + ret.multiple + '.png').show();
 
-
-
-                //准备发牌
-                if (ret.room.gamestatus == 1) {
+                //准备发牌  房间的游戏状态，0未开始，1准备，2正在抢庄，3闲家正在下注
+                if (ret.room.gamestatus == 1) { //房间的状态
                     $('.xiazhubox img').hide();
                     $('input.bankerconfirm').remove();
-                    fapaicountdown(ret.room.starttime);
+                    // fapaicountdown(ret.room.starttime);
                 }
 
-
-
-                if(ret.gamestatus == 1) {
+                if(ret.gamestatus == 1) { //用户的状态
                     $('#myreadyimg').show();
                     $('#gameready').hide();
                 }
+
+                //房间 0 未开始
                 if (ret.room.gamestatus == 0) {
                     if(ret.gamestatus == 0) {
                         $('#gameready').show();
                     }
-                    poker.init('.poker');
+                    poker.init('.poker'); //房间未开始-初始化掉
                     $('.tanpai').hide();
                     $('.xiazhu').hide();
                     $('.xiazhubox img').hide();
-                    $('.zhuangimg').hide();
+                    // $('.zhuangimg').hide();
                     $('#cardsshowplay').remove();
                     $('.tanpaishowplay').remove();
                 }
-                //开始抢庄
-                if (ret.room.gamestatus >= 2 && ret.gamestatus > 0) {
 
+
+                // 【ret.gamestatus == 1 代表准备好了 ret.room.gamestatus == 2 代表所有的选手都准备好了 大于2代表进行类似摊牌的操作】
+                if(ret.room.gamestatus == 2 && ret.gamestatus == 1) {
+                    $('.cards .pai').html('<div class="poker box1" onclick="showselect(this,3);"><img class="pk" src="__STATIC__/game/img/shitoujiandaobu/shitou.jpg"></div>\n' +
+                        '                <div class="poker box2" onclick="showselect(this,2);"><img class="pk" src="__STATIC__/game/img/shitoujiandaobu/jiandao.jpg"></div>\n' +
+                        '                <div class="poker box3" onclick="showselect(this,1);"><img class="pk" src="__STATIC__/game/img/shitoujiandaobu/bu.jpg"></div>\n' +
+                        '                <input type="hidden" name="paiValue" value="">');
+                }
+
+                //等待选择 房间大于等于2 并且
+                if (ret.room.gamestatus >= 2 && ret.gamestatus > 0) {
+                    console.log("ret.room.gamestatus >= 2 && ret.gamestatus > 0")
+                    console.log(ret.pai)
+                    if(ret.gamestatus >= 2) {
+                        paiValueTemp = ret.pai
+                        if(ret.pai == 1) {
+                            ret.pai = ['shitou'];
+
+                        }else if(ret.pai == 2) {
+                            ret.pai = ['jiandao'];
+
+                        }else if (ret.pai == 3) {
+                            ret.pai = ['bu'];
+
+                        }
+                    }else{
+                        ret.pai = ['bu','jiandao','shitou'];
+                    }
+
+
+                    //重新写入一遍
                     //刚准备好，发牌完毕
                     $('.cards').show();
                     $('.readyimg').hide();
                     $('#gameready').hide();
-                    poker.fanpaiall($('.cards .poker'), '__STATIC__/game/img/pai/', ret.pai, function(){
-                        mp3play('mp3fapai');
+                    poker.fanpaiall($('.cards .poker'), '__STATIC__/game/img/shitoujiandaobu/', ret.pai, function(){
+                        // mp3play('mp3fapai');
                     });
 
-
                     //点击过了，不再显示
+                    tanpaicountdown(ret.room.taipaitime);
 
-                    setbankercountdown(ret.room.qiangtime);
                     if(ret.issetbanker == 1){
                         $('.qiang').hide();
                     }
@@ -655,11 +738,11 @@
                             $('.tanpai').hide();
                             //已经下注才显示这行字
                             if(ret.issetmultiple == 1){
-                                $('.tanpai').prev().show();
+                                // $('.tanpai').prev().show();
                             }
                             if(ret.isbanker == 1 && ret.room.rule.gametype != 5){
                                 if(ret.room.gamestatus == 3){
-                                    $('.tanpai').prev().prev().show();
+                                    // $('.tanpai').prev().prev().show();
                                 }else{
                                     $('.tanpai').prev().prev().hide();
                                     $('.tanpai').prev().show();
@@ -667,12 +750,29 @@
 
                             }
                         }else{
-                            if(ret.gamestatus != 2){
-                                $('.tanpai').show();
+
+                            if (paiValueTemp == 1) {
+                                $('.cards .pai').html('<div class="poker box1 open showed">' +
+                                    '<img class="pk" src="__STATIC__/game/img/shitoujiandaobu/shitou.jpg"></div>\n' +
+                                    '                <input type="hidden" name="paiValue" value="1">')
+                            }
+                            if (paiValueTemp == 2) {
+                                $('.cards .pai').html('<div class="poker box2 open showed">' +
+                                    '<img class="pk" src="__STATIC__/game/img/shitoujiandaobu/jiandao.jpg"></div>\n' +
+                                    '                <input type="hidden" name="paiValue" value="2">')
+                            }
+                            if (paiValueTemp == 3) {
+                                $('.cards .pai').html('<div class="poker box3 open showed">' +
+                                    '<img class="pk" src="__STATIC__/game/img/shitoujiandaobu/bu.jpg"></div>\n' +
+                                    '                <input type="hidden" name="paiValue" value="3">')
                             }
 
-                            $('.tanpai').prev().hide();
-                            $('.tanpai').prev().prev().hide();
+                            // if(ret.gamestatus != 2 || ret.gamestatus != 3){
+                                // $('.tanpai').show();
+                            // }
+
+                            // $('.tanpai').prev().hide();
+                            // $('.tanpai').prev().prev().hide();
                         }
                     }
 
@@ -695,9 +795,17 @@
                         }
                         $('<input type="hidden" class="bankerconfirm">').appendTo('body');
                     }
+
                     if(ret.gamestatus == 2) {
                         //$('.tanpai').hide();
-                        $('.cards .niuname').html('<img width="120" src="__STATIC__/game/img/niu' + ret.info + '.png" >').show();
+                        if (ret.pai == 1) {
+                            $('.cards .niuname').html('<img width="120" src="__STATIC__/game/img/shitoujiandaobu/shitou.jpg" >').show();
+                        }else if (ret.pai == 2) {
+                            $('.cards .niuname').html('<img width="120" src="__STATIC__/game/img/shitoujiandaobu/jiandao.jpg" >').show();
+                        }else if (ret.pai == 3) {
+                            $('.cards .niuname').html('<img width="120" src="__STATIC__/game/img/shitoujiandaobu/bu.jpg" >').show();
+                        }
+                        // $('.cards .niuname').html('<img width="120" src="__STATIC__/game/img/niu' + ret.info + '.png" >').show();
                     }else{
                         if(ret.issetmultiple == 0){
                             if(ret.isbanker == 0 && ret.gamestatus > 0){
@@ -711,50 +819,48 @@
 
 
                     }
-                    tanpaicountdown1(ret.room.xiazhutime);
+                    // tanpaicountdown1(ret.room.xiazhutime);
 
 
                 }
+
                 if(ret.gamestatus == 2) {
                     //$('.tanpai').hide();
                     if ($('#cardsshowplay').length == 0) {
                         var cardsshowplay = $('<input type="hidden" id="cardsshowplay">');
-                        mp3play('mp3niu' + ret.info);
+                        // mp3play('mp3niu' + ret.info);
                         cardsshowplay.appendTo('body');
                     }
-                }
-                //闲家下注，摊牌倒计时
-                if (ret.room.gamestatus == 4) {
 
-                    tanpaicountdown(ret.room.taipaitime);
-                    if(ret.gamestatus == 2) {
-
-
-                        $('.cards .niuname').html('<img width="120" src="__STATIC__/game/img/niu' + ret.info + '.png" >').show();
-                    }else{
-                        // $('.tanpai').show();
-                        if(ret.issetmultiple == 0){
-
-                            if(ret.isbanker == 0){
-                                //$('.tanpai').hide();
-                                $('.xiazhu').show();
-                            }
-                        }else{
-                            $('.xiazhu').hide();
-                        }
-
-
-
+                    if (ret.pai == 1) {
+                        $('.cards .niuname').html('<img width="120" src="__STATIC__/game/img/shitoujiandaobu/shitou.jpg" >').show();
+                    }else if (ret.pai == 2) {
+                        $('.cards .niuname').html('<img width="120" src="__STATIC__/game/img/shitoujiandaobu/jiandao.jpg" >').show();
+                    }else if (ret.pai == 3) {
+                        $('.cards .niuname').html('<img width="120" src="__STATIC__/game/img/shitoujiandaobu/bu.jpg" >').show();
                     }
-
-
-
-
                 }
 
+                //闲家下注，摊牌倒计时 代表 全部展示牌
+                if (ret.room.gamestatus == 4) {
+                    // tanpaicountdown(ret.room.taipaitime);
+                    if(ret.gamestatus == 2) { //代表全部摊牌了
+                        if (ret.pai == 1) {
+                            $('.cards .niuname').html('<img width="120" src="__STATIC__/game/img/shitoujiandaobu/shitou.jpg" >').show();
+                        }else if (ret.pai == 2) {
+                            $('.cards .niuname').html('<img width="120" src="__STATIC__/game/img/shitoujiandaobu/jiandao.jpg" >').show();
+                        }else if (ret.pai == 3) {
+                            $('.cards .niuname').html('<img width="120" src="__STATIC__/game/img/shitoujiandaobu/bu.jpg" >').show();
+                        }
+                    }else{
+                        $('.xiazhu').hide();
+                    }
+                }
 
+                console.log("ret.data:")
+                console.log(ret.data)
 
-
+                //查询ret.data 其余的人有 几个  1个 就是 player_0 的路径
                 for(var i =0; i < ret.data.length; i++) {
                     $('#player_' + i).find('img').eq(0).attr('src', ret.data[i].photo);
                     $('#player_' + i).find('.nickname').html(ret.data[i].nickname);
@@ -762,50 +868,15 @@
                     $('.member__' + ret.data[i].id).removeClass('member__' + ret.data[i].id);
                     $('#player_' + i).addClass('member__' + ret.data[i].id);
                     $('#player_' + i).show();
-                    if(ret.data[i].gamestatus == 1){
+                    if(ret.data[i].gamestatus == 1){ // 1 是 准备好的意思
                         $('.member__' + ret.data[i].id + ' .readyimg').show();
                         //把
                     }
 //显示抢庄倍数
-
-                    if (ret.data[i].issetbanker == 1 && ret.room.gamestatus >= 2) {
-                        if (!(ret.room.rule.gametype == 1 || ret.room.rule.gametype == 5)) {
-
-                            $('.member__' + ret.data[i].id).find('.bankerimg').show();
-                            $('.member__' + ret.data[i].id).find('.multipleimg').attr('src', '__STATIC__/game/img/X-' + ret.data[i].multiple + '.png').show();
-
-                        }
-                    }
-
-
+                    console.log("data.length"+ret.room.gamestatus)
                     if (ret.room.gamestatus >= 3) {
                         $('.bankerimg').hide();
-
-                        if (ret.data[i].banker == 1 && ret.room.rule.gametype != 5) {
-
-                            $('.member__' + ret.data[i].id).find('.zhuangimg').show();
-
-
-                        } else {
-
-                            if (ret.room.rule.gametype != 5) {
-                                //console.log(ret.data[i].issetmultiple);
-                                if (ret.data[i].issetmultiple == 1) {
-                                    $('.member__' + ret.data[i].id).find('.multipleimg').attr('src', '__STATIC__/game/img/X-' + ret.data[i].multiple + '.png').show();
-                                } else {
-                                    $('.member__' + ret.data[i].id).find('.multipleimg').hide();
-                                }
-                            }
-
-                        }
-                    }
-                    if(ret.room.rule.gametype == 2 && ret.data[i].banker == 1){
-                        $('.member__' + ret.data[i].id).find('.multipleimg').hide();
-
-                    }
-                    if(ret.data[i].gamestatus == 0){
-                        $('.member__' + ret.data[i].id).find('.multipleimg').hide();
-
+                        $('.member__' + ret.data[i].id).find('.multipleimg').attr('src', '__STATIC__/game/img/X-' + ret.data[i].multiple + '.png').show();
                     }
 
                     if (ret.room.gamestatus == 0) {
@@ -820,22 +891,43 @@
                     if (ret.data[i]['gamestatus'] > 0 && ret.room.gamestatus > 1) {
 
                         $('.member__' + ret.data[i].id + ' .readyimg').hide();
-                        if (ret.data[i]['gamestatus'] == 2) {
+                        if (ret.data[i]['gamestatus'] == 2 && ret.room['gamestatus'] >= 3) {
                             if($('.member__' + ret.data[i].id+' .tanpaishowplay').length == 0){
                                 var tanpaishowplay = $('<input type="hidden" class="tanpaishowplay">');
-                                mp3play('mp3niu'+ret.data[i]['info']);
+                                // mp3play('mp3niu'+ret.data[i]['info']);
                                 tanpaishowplay.appendTo('.member__' + ret.data[i].id);
                             }
 
+                            //pai 隐藏
+                            $('#player_' + i).find('.cardsbox .poker').hide()
 
-                            $('#player_' + i).find('.cardsbox .niuname').html('<img width="120" src="__STATIC__/game/img/niu' + ret.data[i]['info'] + '.png" >');
+                            if(ret.data[i].pai == 1) {
+                                $('#player_' + i).find('.cardsbox .niuname').html('<img width="120" src="__STATIC__/game/img/shitoujiandaobu/shitou.jpg" >');
+                            }else if(ret.data[i].pai == 2){
+                                $('#player_' + i).find('.cardsbox .niuname').html('<img width="120" src="__STATIC__/game/img/shitoujiandaobu/jiandao.jpg" >');
+                            }else if(ret.data[i].pai == 3){
+                                $('#player_' + i).find('.cardsbox .niuname').html('<img width="120" src="__STATIC__/game/img/shitoujiandaobu/bu.jpg" >');
+                            }else{
+                                $('#player_' + i).find('.cardsbox .niuname').html(''); //为空
+                            }
+
                             $('#player_' + i).find('.cardsbox .niuname').show();
                         }
                         $('#player_' + i).find('.cardsbox').show();
-
-
-                        poker.fanpaiall($('#player_' + i+' .poker'), '__STATIC__/game/img/pai/', ret.data[i]['pai'],function(){
-                            mp3play('mp3fapai');
+                        if(ret.data[i]['pai'] == "") {
+                            ret.data[i]['pai'] = ['bu','jiandao','shitou'];
+                        }else{
+                            //有了就把提交按钮 隐藏掉
+                            $('.poker').removeAttr('onclick'); //去掉点击事件
+                            $(".qiang").hide();
+                            switch (ret.data[i]['pai']) {
+                                case 1:ret.data[i]['pai'] = ['shitou'];break;
+                                case 2:ret.data[i]['pai'] = ['jiandao'];break;
+                                case 3:ret.data[i]['pai'] = ['bu'];break;
+                            }
+                        }
+                        poker.fanpaiall($('#player_' + i+' .poker'), '__STATIC__/game/img/shitoujiandaobu/', ret.data[i]['pai'],function(){
+                            // mp3play('mp3fapai');
                         });
                     }
 
@@ -847,7 +939,8 @@
 
         });
 
-
+        //--------------------新逻辑---------------------------
+        // $('.cards').show(); //都准备好之后这个才显示出来
 
     });
 
@@ -879,8 +972,7 @@ mp3play(msgid);
     }
 
     function sendmsg(msg,id) {
-
-mp3play(id);
+        mp3play(id);
         var inputOpentip1 = new Opentip($('.member__{$memberinfo.id}'), {target:true, hideDelay:0.2, tipJoint:"left bottom", removeElementsOnHide:true});
         inputOpentip1.show();
         inputOpentip1.setContent(msg);
@@ -896,17 +988,34 @@ mp3play(id);
         ;
     }
 
+    //第一步 准备
     function gameready1(gameready){
-
+        // $('.cards').show();
+        // $('.niuname').show();
+        // $('.tanpai').show();
+        // $('.cardsbox').show();
+        $('.pai .poker').removeClass('selected');
+        $('.poker .box1').one("click",function(){
+            showselect(this,3)
+        });
+        $('.poker .box2').one("click",function(){
+            showselect(this,2)
+        });
+        $('.poker .box3').one("click",function(){
+            showselect(this,1)
+        });
+        // $('.poker .box1').attr("onclick","showselect(this,3)")
+        // $('.poker .box2').attr("onclick","showselect(this,2)")
+        // $('.poker .box3').attr("onclick","showselect(this,1)")
         $('.niuname').hide();
         $('.cards').hide();
         $('.tanpai').hide();
         $('.cardsbox').hide();
         $.post('{:url('gameready')}', {gameready:gameready}, function (ret) {
-
             $('#gameready').hide();
-
-
+            // $('input[name="paiValue"]').val('');
+            //增加选择的特效
+            // $('.pai .poker').removeClass('selected');
         }, 'json'
     )
         ;
@@ -960,15 +1069,14 @@ mp3play(id);
 
 
     //摊牌
-    function tanpai(){
-        $('.last-time span.int').countdown(0);
-        $.post('{:url('showall')}', {}, function (ret) {
-            $('.tanpai').hide();
-            //$('.last-time').hide();
-        }, 'json'
-    )
-        ;
-    }
+    // function tanpai(){
+    //     $('.last-time span.int').countdown(0);
+    //     $.post('{:url('showall')}', {}, function (ret) {
+    //         $('.tanpai').hide();
+    //     }, 'json'
+    // )
+    //     ;
+    // }
 
 
     function setflash(img){

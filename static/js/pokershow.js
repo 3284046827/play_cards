@@ -13,10 +13,17 @@ var poker = {
             return false;
         }
         _this.addClass('open');
+        if (key == 1) {
+            key = "shitou"
+        }else if (key == 2) {
+            key = "jiandao"
+        }else if (key == 3){
+            key = 'bu'
+        }
         _this.flip({
             direction: 'lr',
-            content: '<img class="pk" src="' + imgpath + key + '.png">',
-            speed: 150,
+            content: '<img class="pk" src="' + imgpath + key + '.jpg">',
+            speed: 10,
             onEnd: function () {
 
                 audio();
@@ -52,12 +59,12 @@ var poker = {
                 'max-width':'40px',
                 opacity:1,
                 'z-index':5
-            }).animate({'margin-top':0,'margin-left':0,'top': dy + 'px', left: dx + 'px'}, 300,'', function () {
+            }).animate({'margin-top':0,'margin-left':0,'top': dy + 'px', left: dx + 'px'}, 1,'', function () {
                 img.css({'position': 'static','max-width':'none'});
                 //_this.html(img);
                 showed ++ ;
                 audio();
-                setTimeout(function(){poker.fanpai(pai, imgpath, key, audio);},750);
+                setTimeout(function(){poker.fanpai(pai, imgpath, key, audio);},10);
 
             });
         }, 150 * poker.timer);

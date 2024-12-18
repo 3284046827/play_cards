@@ -44,6 +44,8 @@ class Room extends Model
         return $member;
     }
 
+    //房间初始化
+    //流程 默认都准备好 - 房间准备好 - 等待出 石头剪刀布 - 都出完 -房间
     public function gameinit($where = array(), $num = 10)
     {
 
@@ -58,33 +60,32 @@ class Room extends Model
             return false;
         }
 
-        $lastwinnerid = (int)model('member') -> where(array('room_id' => $room['id'], 'typemultiple' => 10, 'gamestatus' => array('gt', 0))) -> order('pairet desc') -> value('id');
+        $lastwinnerid = (int)model('member','common\model') -> where(array('room_id' => $room['id'], 'typemultiple' => 10, 'gamestatus' => array('gt', 0),"pairet" =>array("gt",0))) -> order('pairet desc') -> value('id');
         $rule = unserialize($room['rule']);
         if($lastwinnerid > 0){
-
             $rule['lastwinnerid'] = $lastwinnerid;
 
         }
         $rule = serialize($rule);
 
-        $this-> accounttemp($room['id']);
+        $this-> accounttemp($room['id']); //金币 - 账目处理
         $map['room_id'] = $room['id'];
         Db::name('member')->where(array('room_id' => $room['id']))->update(array('tanpai' => '','pai' => '', 'gamestatus' => 0));
-        model('room')->where(array('id' => $room['id']))->update(array('taipaitime' => time(),'islock' => 0, 'gamestatus' => 0, 'rule' => $rule));
+        model('room','common\model')->where(array('id' => $room['id']))->update(array('taipaitime' => time(),'islock' => 0, 'gamestatus' => 0, 'rule' => $rule));
         if ($room['room_cards_num'] <= 0 && $room['playcount'] >= $num) {
             $this->error = '房卡耗完了';
             $this->account($room['id']);
-            model('room')->where(array('id' => $room['id']))->update(array('playcount' => 0, 'gamestatus' => 0));
+            model('room','common\model')->where(array('id' => $room['id']))->update(array('playcount' => 0, 'gamestatus' => 0));
             return false;
         }
 
         if ($room['room_cards_num'] > 0 && $room['playcount'] >= $num) {
-            model('room')->where(array('id' => $room['id']))->setDec('room_cards_num', 1);
-            model('room')->where(array('id' => $room['id']))->update(array('playcount' => 1, 'gamestatus' => 0));
+            model('room','common\model')->where(array('id' => $room['id']))->setDec('room_cards_num', 1);
+            model('room','common\model')->where(array('id' => $room['id']))->update(array('playcount' => 1, 'gamestatus' => 0));
             //这里10局完了
             //$this->account($room['id']);
         }else{
-            model('room')->where(array('id' => $room['id']))->setInc('playcount', 1);
+            model('room','common\model')->where(array('id' => $room['id']))->setInc('playcount', 1);
         }
 
         return true;
@@ -294,11 +295,45 @@ class Room extends Model
         //删除临时记录，再开始玩十局要重新累计
         Db::name('moneydetailtemp')->where(array('room_id' => $roomid))->delete();
     }
+    //太麻烦了 - 直接进行表 同步处理
+    public function newAccountRecord() {
+
+        //输的用户金币扣除
+
+        //赢的用户金币增加
+
+        //同时记录到记录表中
+
+        try {
+            // 启动事务
+            Db::startTrans();
+
+            // 执行多表操作
+            // 假设有两个模型：User 和 Profile，分别对应用户表和用户详情表
+            $user = new User();
+            $profile = new Profile();
+
+            // 添加用户
+            $user->save(['name' => 'new_user']);
+            $userId = $user->id; // 获取新添加用户的ID
+
+            // 添加用户详情
+            $profile->save(['user_id' => $userId, 'info' => 'user_info']);
+
+            // 提交事务
+            Db::commit();
+        } catch (\Exception $e) {
+            // 回滚事务
+            Db::rollback();
+            // 处理异常，例如记录日志、返回错误信息等
+            throw $e;
+        }
+    }
 
     public function accounttemp($roomid){
-        $roomdb = model('room');
-        $memberdb = model('member');
-        $moneydetailtempdb = model('moneydetailtemp');
+        $roomdb = model('room','common\model');
+        $memberdb = model('member','common\model');
+        $moneydetailtempdb = Db::name('moneydetailtemp');
         //从房间中查询得到当前游戏的规则内容，是一个序列化的数组，要反序列
         $rule = $roomdb -> where(array('id' => $roomid)) -> value('rule');
         $rule = unserialize($rule);
@@ -441,8 +476,8 @@ class Room extends Model
     //获取分数数据
     public function getranking($room){
         $ret = array();
-        $moneydetailtempdb = model('moneydetailtemp');
-        $list = $moneydetailtempdb -> where(array('room_id' => $room)) -> group('member_id') ->field('member_id,sum(num) as money') ->select();
+        $moneydetailtempdb = Db::name('moneydetailtemp');
+        $list = $moneydetailtempdb -> where(array('room_id' => $room)) -> group('member_id') ->field('member_id,sum(num) as money') ->select(); //根据房间获取明细
         foreach($list as $k => $v){
             $ret[$v['member_id']] = $v['money'];
         }

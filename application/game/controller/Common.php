@@ -48,7 +48,7 @@ class Common extends Controller
         if(!$member){
             $this->redirect(url('Login/logout'));
         }
-        $this->memberinfo = $member;
+        $this->memberinfo = $member; //获取用户的所有信息
         $this->assign('memberinfo', $member);
         //生成js签名
         $jsconfig = Wechat::app() -> js ->config(array('onMenuShareQQ', 'onMenuShareWeibo','onMenuShareTimeline', 'onMenuShareAppMessage'),false);

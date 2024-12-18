@@ -10,7 +10,7 @@
  * 房卡游戏局数：gamenum【10:1,20:2】
  * 固定上庄：openroom【0,100,300,500】
  */
-class douniu
+class shitoujiandaobu
 {
 
     /**
@@ -82,7 +82,8 @@ class douniu
      */
     public function getcardname($i)
     {
-        $name = array('方块 <span style="color:#f00;">♦</span> ', '草花 ♣ ', '红桃 <span style="color:#f00;">♥</span> ', '黑桃 ♠ ');
+        $name = array('✋,✌️,✊');
+//        $name = array('方块 <span style="color:#f00;">♦</span> ', '草花 ♣ ', '红桃 <span style="color:#f00;">♥</span> ', '黑桃 ♠ ');
         $num = array('A', 2, 3, 4, 5, 6, 7, 8, 9, 10, 'J', 'Q', 'K');
         $namekey = ($i % 4) > 0 ? ($i % 4 - 1) : 3;
         $numkey = ceil($i / 4) - 1;

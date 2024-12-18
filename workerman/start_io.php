@@ -96,8 +96,8 @@ $sender_io->on('connection', function($socket){
         // 将uid的在线socket数减一
         if(--$uidConnectionMap[$socket->uid] <= 0)
         {
-            unset($uidConnectionMap[$socket->uid]);
-            curlRequest('http://niuniu.cc/game.php/login/comeout/id/'.$socket->uid);
+            unset($uidConnectionMap[$socket->uid]); // 1.退出房间 2直接关闭
+            curlRequest('http://test-qipai.qipai.com/game.php/login/comeout/id/'.$socket->uid);
             $sender_io->emit('update_offline', $socket->uid);
         }
     });

@@ -50,7 +50,7 @@ class Member extends Model
             $this->error = '房间锁住了，等一会再来吧';
             return false;
         }
-        return $this->where($where)->update(array('online' => 1,'room_id' => $room_id));
+        return $this->where($where)->update(array('online' => 1,'room_id' => $room_id,"issetmultiple"=>1,"issetbanker"=>1));
     }
 
     /**
