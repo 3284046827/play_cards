@@ -609,7 +609,9 @@
 
             //显示金币的动画
             if (ret.type == 999) {
+                console.log("ret.type == 999 start");
                 console.log(ret.data);
+                console.log("ret.tye == 999 end");
                 if(ret.end == 1){
                     $('#gameready').remove();
                 }
@@ -637,9 +639,6 @@
 
             //传来房间中其它会员的信息，得到后加入到界面中显示出来，数据是一个json数组
             if(ret.type == 4) {
-                console.log("========start==============")
-                console.log(ret)
-                console.log("========end==============")
 
                 //更新玩的次数
                 $('#playcount').html(ret.room['playcount']);
@@ -691,8 +690,6 @@
 
                 //等待选择 房间大于等于2 并且
                 if (ret.room.gamestatus >= 2 && ret.gamestatus > 0) {
-                    console.log("ret.room.gamestatus >= 2 && ret.gamestatus > 0")
-                    console.log(ret.pai)
                     if(ret.gamestatus >= 2) {
                         paiValueTemp = ret.pai
                         if(ret.pai == 1) {
@@ -720,7 +717,9 @@
                     });
 
                     //点击过了，不再显示
-                    tanpaicountdown(ret.room.taipaitime);
+                    if(ret.gamestatus  == 1 && ret.room.gamestatus == 2) {
+                        tanpaicountdown(ret.room.taipaitime);
+                    }
 
                     if(ret.issetbanker == 1){
                         $('.qiang').hide();
@@ -857,8 +856,6 @@
                     }
                 }
 
-                console.log("ret.data:")
-                console.log(ret.data)
 
                 //查询ret.data 其余的人有 几个  1个 就是 player_0 的路径
                 for(var i =0; i < ret.data.length; i++) {
@@ -873,7 +870,6 @@
                         //把
                     }
 //显示抢庄倍数
-                    console.log("data.length"+ret.room.gamestatus)
                     if (ret.room.gamestatus >= 3) {
                         $('.bankerimg').hide();
                         $('.member__' + ret.data[i].id).find('.multipleimg').attr('src', '__STATIC__/game/img/X-' + ret.data[i].multiple + '.png').show();
